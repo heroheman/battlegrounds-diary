@@ -88,7 +88,8 @@ export default {
       tribe: null,
       mmr: null,
       summary: null,
-      missed: "false"
+      missed: "false",
+      timestamp: null
     }
   }),
   computed: {
@@ -125,6 +126,7 @@ export default {
       'addResult'
     ]),
     submitResult() {
+      this.result.timestamp = new Date()
       this.addResult(this.result)
     }
   }
