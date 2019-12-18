@@ -1,4 +1,4 @@
-{
+[
     {
         "id": 1,
         "name": "Brann Bronzebeard"
@@ -9,7 +9,7 @@
     },
     {
         "id": 3,
-        "name": "Edwin VanClee"
+        "name": "Edwin VanCleef"
     },
     {
         "id": 4,
@@ -95,4 +95,5 @@
         "id": 24,
         "name": "Queen Wagtoggle"
     }
-}
+]
+
