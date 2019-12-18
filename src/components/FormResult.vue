@@ -97,7 +97,7 @@ export default {
       'heroes', 'tribes', 'summary'
     ]),
     heroOptions () {
-      return this.heroes.map( hero => {
+      return this.heroes.filter(h => h.active === true).map( hero => {
         let newObj = {}
         newObj['value'] = hero.id
         newObj['text'] = hero.name
