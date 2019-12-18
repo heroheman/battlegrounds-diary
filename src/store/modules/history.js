@@ -1,9 +1,11 @@
 import dataHeroes from '@/data/heroes.json'
 import dataTribes from '@/data/tribes.json'
+import dataSummary from '@/data/summary.json'
 
 const state = {
   heroes: dataHeroes,
   tribes: dataTribes,
+  summary: dataSummary,
   results: []
 }
 

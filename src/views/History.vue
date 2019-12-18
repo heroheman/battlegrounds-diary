@@ -1,16 +1,14 @@
 <template>
   <div>
-
-    <b-row>
+    <b-row class="mb-4">
       <b-col>
         <FormResult />
       </b-col>
     </b-row>
 
-    <b-row>
+    <b-row class="mb-4">
       <b-col>
-        <b-table :items="results">
-        </b-table>
+        <TableResults />
       </b-col>
     </b-row>
   </div>
@@ -18,10 +16,11 @@
 
 <script>
 import FormResult from '@/components/FormResult'
+import TableResults from '@/components/TableResults'
 export default {
   name: "History",
   components: {
-    FormResult
+    FormResult, TableResults
   }
 }
 </script>

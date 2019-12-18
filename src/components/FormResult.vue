@@ -46,15 +46,9 @@
 
         <b-col>
           <!-- PLACE SELECTION -->
-          <b-form-select v-model="result.summary">
+          <b-form-select v-model="result.summary" :options="summaryOptions">
             <template v-slot:first>
               <option :value="null" disabled>-- How are feeling about this? --</option>
-
-              <option value="1">1 - Totally my fault. Meh.</option>
-              <option value="2">2 - Stupid RNG. F%$# this s#@% game</option>
-              <option value="3">3 - It was ok and a reasonable result</option>
-              <option value="4">4 - Thank you RNGesus! Love you!</option>
-              <option value="5">5 - Steamrolled them, Kripp - come at me!</option>
             </template>
           </b-form-select>
         </b-col>
@@ -99,7 +93,7 @@ export default {
   }),
   computed: {
     ...mapState('history', [
-      'heroes', 'tribes', 'results'
+      'heroes', 'tribes', 'summary'
     ]),
     heroOptions () {
       return this.heroes.map( hero => {
@@ -114,6 +108,14 @@ export default {
         let newObj = {}
         newObj['value'] = tribe.id
         newObj['text'] = tribe.name
+        return newObj
+      })
+    },
+    summaryOptions () {
+      return this.summary.map( sum => {
+        let newObj = {}
+        newObj['value'] = sum.id
+        newObj['text'] = `${sum.titleShort} - ${sum.titleLong}`
         return newObj
       })
     }
