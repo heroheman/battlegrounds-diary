@@ -32,7 +32,20 @@ const actions = {
   },
 }
 
-const getters = {}
+const getters = {
+  resultsTableData: state => {
+    return state.results.map(res => {
+      return {
+        hero: state.heroes.find( h => h.id === res.hero ).name || '',
+        tribe: res.tribe,
+        mmr: res.mmr,
+        placement: res.placement,
+        summary: state.summary.find( s => s.id === res.summary ).titleShort || '',
+        timestamp: res.timestamp,
+      }
+    })
+  }
+}
 
 export default {
   namespaced: true,

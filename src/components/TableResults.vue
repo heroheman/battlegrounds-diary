@@ -1,17 +1,32 @@
 <template>
   <b-card header="Your journey">
-    <b-table :items="results">
+    <b-table
+      :items="resultsTableData"
+      :fields="fields"
+    >
+      <template v-slot:cell(hero)="data">
+        <b class="text-info">Its {{ data.value }}</b>
+      </template>
     </b-table>
   </b-card>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: "TableResults",
+  data: () => ({
+    fields: [
+      { key: 'hero', label: 'Hero' },
+      { key: 'placement', label: 'Placement' },
+      { key: 'tribe', label: 'Tribe' },
+      { key: 'mmr', label: 'MMR' },
+      { key: 'summary', label: 'Summary' },
+    ]
+  }),
   computed: {
-    ...mapState('history', [
-      'results'
+    ...mapGetters('history', [
+      'resultsTableData'
     ]),
   },
 }
