@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "name": "Menagerie",
+        "desc": "The best of all things, usually accompanied by Amalgan's"
+    },
+    {
+        "id": 1,
+        "name": "Mechs",
+        "desc": "Mechs, Androids, Robots, Cyborgs, you know, electronic things. They sometimes dream of electronic sheeps"
+    },
+    {
+        "id": 2,
+        "name": "Murlocs",
+        "desc": "Mrrggl!"
+    },
+    {
+        "id": 3,
+        "name": "Beasts",
+        "desc": "Rats, Spiders, Mama Bears, etc"
+    },
+    {
+        "id": 4,
+        "name": "Demons",
+        "desc": "A deck type for people who like to live HAAARDCORE"
+    },
+    {
+        "id": 5,
+        "name": "Neutral / Other",
+        "desc": "Who needs tribes anyway?"
+    }
+]
