@@ -8,7 +8,7 @@
             <b-row class="mb-4">
               <b-col>
                 <!-- HERO SELECTION -->
-                <b-form-select v-model="results.hero" :options="heroOptions">
+                <b-form-select v-model="result.hero" :options="heroOptions">
                   <template v-slot:first>
                     <option :value="null" disabled>-- Please select a hero --</option>
                   </template>
@@ -17,7 +17,7 @@
 
               <b-col>
                 <!-- PLACE SELECTION -->
-                <b-form-select v-model="results.placement">
+                <b-form-select v-model="result.placement">
                   <template v-slot:first>
                     <option :value="null" disabled>-- Results --</option>
                   </template>
@@ -35,7 +35,7 @@
 
               <b-col>
                 <!-- PLACE SELECTION -->
-                <b-form-select v-model="results.tribe" :options="tribeOptions">
+                <b-form-select v-model="result.tribe" :options="tribeOptions">
                   <template v-slot:first>
                     <option :value="null" disabled>-- Select tribe --</option>
                   </template>
@@ -50,7 +50,7 @@
 
               <b-col>
                 <!-- PLACE SELECTION -->
-                <b-form-select v-model="results.summary">
+                <b-form-select v-model="result.summary">
                   <template v-slot:first>
                     <option :value="null" disabled>-- How are feeling about this? --</option>
 
@@ -65,7 +65,7 @@
 
               <b-col>
                 <b-form-checkbox
-                  v-model="results.missed"
+                  v-model="result.missed"
                   name="checkbox-1"
                   value=true
                   unchecked-value=false
@@ -74,19 +74,34 @@
                 </b-form-checkbox>
               </b-col>
             </b-row>
+
+            <b-row>
+              <b-col>
+                <b-button @click="submitResult">
+                  Submit
+                </b-button>
+              </b-col>
+            </b-row>
           </b-form>
         </b-card>
+      </b-col>
+    </b-row>
+
+    <b-row>
+      <b-col>
+        <b-table :items="results">
+        </b-table>
       </b-col>
     </b-row>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: "History",
   data: () => ({
-    results: {
+    result: {
       hero: null,
       placement: null,
       tribe: null,
@@ -96,7 +111,7 @@ export default {
   }),
   computed: {
     ...mapState('history', [
-      'heroes', 'tribes'
+      'heroes', 'tribes', 'results'
     ]),
     heroOptions () {
       return this.heroes.map( hero => {
@@ -113,6 +128,14 @@ export default {
         newObj['text'] = tribe.name
         return newObj
       })
+    }
+  },
+  methods: {
+    ...mapActions('history', [
+      'addResult'
+    ]),
+    submitResult() {
+      this.addResult(this.result)
     }
   }
 }
