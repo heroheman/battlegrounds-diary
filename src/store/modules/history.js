@@ -1,4 +1,10 @@
-const state = {}
+import dataHeroes from '@/data/heroes.json'
+import dataTribes from '@/data/tribes.json'
+
+const state = {
+  heroes: dataHeroes,
+  tribes: dataTribes
+}
 
 const mutations = {}
 

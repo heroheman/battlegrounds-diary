@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Popover Button",
+  name: "PopoverButton",
   props: [ 'label', 'title', 'text']
 }
 </script>
