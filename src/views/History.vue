@@ -13,7 +13,7 @@
             <b-tab title="Your Journey">
               <TableResults />
             </b-tab>
-            <b-tab title="Stats & Graphs (coming soon)" disabled>
+            <b-tab title="Stats & Graphs (soon)" disabled>
             </b-tab>
           </b-tabs>
         </b-card>

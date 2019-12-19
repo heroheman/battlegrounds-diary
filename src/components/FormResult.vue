@@ -1,8 +1,8 @@
 <template>
   <b-card header="Add your data">
     <b-form @submit="submitResult" @reset="resetForm">
-      <b-row class="mb-4">
-        <b-col>
+      <b-row>
+        <b-col sm="12" md="4" class="mb-4">
           <!-- HERO SELECTION -->
           <b-form-select required v-model="result.hero" :options="heroOptions">
             <template v-slot:first>
@@ -11,7 +11,7 @@
           </b-form-select>
         </b-col>
 
-        <b-col>
+        <b-col sm="12" md="4" class="mb-4">
           <!-- PLACE SELECTION -->
           <b-form-select required v-model="result.placement">
             <template v-slot:first>
@@ -29,7 +29,7 @@
           </b-form-select>
         </b-col>
 
-        <b-col>
+        <b-col sm="12" md="4" class="mb-4">
           <!-- PLACE SELECTION -->
           <b-form-select required v-model="result.tribe" :options="tribeOptions">
             <template v-slot:first>
@@ -40,11 +40,11 @@
       </b-row>
 
       <b-row class="mb-4">
-        <b-col>
+        <b-col sm="12" md="4" class="mb-4">
           <b-form-input required v-model="result.mmr" type="number" placeholder="New MMR" />
         </b-col>
 
-        <b-col>
+        <b-col sm="12" md="4" class="mb-4">
           <!-- PLACE SELECTION -->
           <b-form-select required v-model="result.summary" :options="summaryOptions">
             <template v-slot:first>
@@ -55,7 +55,7 @@
       </b-row>
 
       <b-row>
-        <b-col>
+        <b-col sm="12" md="12" class="mb-4">
           <b-form-textarea
             id="note"
             class="mb-3"

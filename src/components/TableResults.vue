@@ -1,9 +1,19 @@
 <template>
   <div>
     <b-table
+      responsive
       :items="resultsTableData"
       :fields="fields"
       >
+
+      <template v-slot:table-colgroup="scope">
+        <col
+          v-for="field in scope.fields"
+          :key="field.key"
+          :class="field.key"
+          >
+      </template>
+
       <template v-slot:cell(hero)="data">
         <b class="text-info">{{ data.value }}</b>
       </template>
@@ -58,9 +68,9 @@ export default {
   data: () => ({
     fields: [
       { key: 'hero', label: 'Hero' },
-      { key: 'placement', label: 'Placement' },
-      { key: 'tribe', label: 'Tribe' },
+      { key: 'placement', label: 'Pos' },
       { key: 'mmr', label: 'MMR' },
+      { key: 'tribe', label: 'Tribe' },
       { key: 'summary', label: 'Summary' },
       { key: 'timestamp', label: 'Date' },
       { key: 'actions', label: '' },
@@ -75,6 +85,19 @@ export default {
 </script>
 
 <style scoped>
+
+colgroup .hero {min-width: 200px;}
+colgroup .placement { min-width: 100px; }
+colgroup .tribe { width: 100px; }
+colgroup .mmr { width: 100px; }
+colgroup .summary { width: 100px; }
+colgroup .timestamp { width: 150px; }
+colgroup .actions { width: 100px; }
+
+.table td {
+  white-space: nowrap !important;
+}
+
 .button--delete {
   padding: 0.15rem 0.5rem;
   margin-right: 2px;

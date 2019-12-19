@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header class="mb-4"></Header>
-    <b-container>
+    <b-container class="main-container">
       <main>
         <router-view/>
       </main>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,5 +26,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 </style>
