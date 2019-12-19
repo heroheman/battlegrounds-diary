@@ -1,22 +1,54 @@
 <template>
-  <b-table
-    :items="resultsTableData"
-    :fields="fields"
-    >
-    <template v-slot:cell(hero)="data">
-      <b class="text-info">{{ data.value }}</b>
-    </template>
+  <div>
+    <b-table
+      :items="resultsTableData"
+      :fields="fields"
+      >
+      <template v-slot:cell(hero)="data">
+        <b class="text-info">{{ data.value }}</b>
+      </template>
 
-    <template v-slot:cell(timestamp)="data">
-      <time :time="data.value" :title="data.value">{{ data.value | moment('from', 'now') }}</time>
-    </template>
+      <template v-slot:cell(mmr)="data">
+        {{data.item.mmr}}
+        <span v-if="data.item.difference > 0" class="text-success">+{{data.item.difference}}</span>
+        <span v-else-if="data.item.difference === 0">{{data.item.difference}}</span>
+        <span v-else class="text-danger">{{data.item.difference}}</span>
+      </template>
 
-    <template v-slot:cell(actions)="data">
-      <b-button variant="danger" size="sm" title="Delete Entry" class="button--delete">
-        <unicon name="trash" fill="white" width="15" height="15" />
-      </b-button>
-    </template>
-  </b-table>
+      <template v-slot:cell(timestamp)="data">
+        <time :time="data.value" :title="data.value">{{ data.value | moment('from', 'now') }}</time>
+      </template>
+
+      <template v-slot:cell(actions)="row">
+        <div class="text-right">
+          <b-button v-if="row.item.note"
+                    variant="info" size="sm" title="Show note"
+                    class="button--delete" @click="row.toggleDetails">
+            <unicon name="comment-lines" fill="white" width="15" height="15" />
+          </b-button>
+
+          <b-button v-b-modal.delete-modal
+                    variant="danger" size="sm" title="Delete Entry" class="button--delete">
+            <unicon name="trash" fill="white" width="15" height="15" />
+          </b-button>
+        </div>
+
+      </template>
+
+      <template v-slot:row-details="row">
+        <b-card>
+          <b-card-text>
+            {{row.item.note}}
+          </b-card-text>
+        </b-card>
+      </template>
+    </b-table>
+
+    <b-modal id="delete-modal" title="Delete Entry?">
+      <p class="my-4">Are you sure?</p>
+    </b-modal>
+
+  </div>
 </template>
 
 <script>
@@ -45,5 +77,6 @@ export default {
 <style scoped>
 .button--delete {
   padding: 0.15rem 0.5rem;
+  margin-right: 2px;
 }
 </style>

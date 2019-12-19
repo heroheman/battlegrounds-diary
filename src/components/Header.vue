@@ -13,12 +13,12 @@
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto">
-            <b-navbar-text class="text-light">
+            <b-nav-text class="text-light">
               <strong>
                 MMR:
               </strong>
               {{ mmr }}
-            </b-navbar-text>
+            </b-nav-text>
           </b-navbar-nav>
 
         </b-collapse>

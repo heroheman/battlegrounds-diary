@@ -10,8 +10,8 @@ import Unicon from 'vue-unicons'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import { uniTrash } from 'vue-unicons/src/icons'
-Unicon.add([uniTrash])
+import { uniTrash, uniCommentLines } from 'vue-unicons/src/icons'
+Unicon.add([uniTrash, uniCommentLines])
 
 Vue.use(Unicon)
 Vue.use(BootstrapVue)

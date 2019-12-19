@@ -113,7 +113,7 @@ export default {
   }),
   computed: {
     ...mapState('history', [
-      'heroes', 'tribes', 'summary', 'mmr'
+      'heroes', 'tribes', 'summary', 'mmr', 'results'
     ]),
     heroOptions () {
       return this.heroes.filter(h => h.active === true).map( hero => {
@@ -147,7 +147,11 @@ export default {
     submitResult(e) {
       e.preventDefault();
       this.result.timestamp = new Date()
-      this.result.difference = this.result.mmr - this.mmr
+      if (this.result.missed === 'true' || !this.results.length) {
+        this.result.difference = 0
+      } else {
+        this.result.difference = this.result.mmr - this.mmr
+      }
       let temp = {...this.result}
       this.addResult(temp)
 
