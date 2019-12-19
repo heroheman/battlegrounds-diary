@@ -60,8 +60,22 @@
             value=true
             unchecked-value=false
             >
-            I did not track a few games since the last time.
+            Fresh MMR
           </b-form-checkbox>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col>
+          <b-form-textarea
+            id="note"
+            class="mb-3"
+            v-model="result.note"
+            size="sm"
+            placeholder="Optional match notes e.g. Could not find Rock Hunter"
+            rows="2"
+            max-rows="6"
+          />
         </b-col>
       </b-row>
 
@@ -88,6 +102,7 @@ export default {
       mmr: null,
       summary: null,
       missed: "false",
+      note: null,
       timestamp: null
     }
   }),
@@ -141,6 +156,7 @@ export default {
       this.result.placement = null
       this.result.tribe = null
       this.result.mmr = null
+      this.result.note = null
       this.result.summary = null
       this.result.missed = null
       this.result.timestamp = null
