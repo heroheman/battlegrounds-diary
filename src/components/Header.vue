@@ -1,6 +1,6 @@
 <template>
   <header>
-    <b-navbar  toggleable="lg" type="dark" variant="info">
+    <b-navbar  toggleable="lg" type="dark" variant="dark">
       <b-container>
         <b-navbar-brand>Battlegrounds Diary</b-navbar-brand>
 
@@ -11,9 +11,31 @@
             <b-nav-item to="/">Calculator</b-nav-item>
             <b-nav-item to="/history">History</b-nav-item>
           </b-navbar-nav>
+
+          <b-navbar-nav class="ml-auto">
+            <b-navbar-text class="text-light">
+              <strong>
+                MMR:
+              </strong>
+              {{ mmr }}
+            </b-navbar-text>
+          </b-navbar-nav>
+
         </b-collapse>
 
       </b-container>
     </b-navbar>
   </header>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  name: 'Header',
+  computed: {
+    ...mapState('history', [
+      'mmr'
+    ])
+  }
+}
+</script>
