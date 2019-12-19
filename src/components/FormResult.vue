@@ -52,17 +52,6 @@
             </template>
           </b-form-select>
         </b-col>
-
-        <b-col>
-          <b-form-checkbox
-            v-model="result.missed"
-            name="checkbox-1"
-            value=true
-            unchecked-value=false
-            >
-            Fresh MMR
-          </b-form-checkbox>
-        </b-col>
       </b-row>
 
       <b-row>
@@ -79,10 +68,26 @@
         </b-col>
       </b-row>
 
+      <b-row>
+
+      </b-row>
+
       <b-row class="mb-4">
         <b-col>
+          <b-form-checkbox
+            v-model="result.missed"
+            name="checkbox-1"
+            value=true
+            unchecked-value=false
+            switch
+            >
+            Only set MMR
+          </b-form-checkbox>
+          <b-form-text class="mb-3">If you have not tracked some games since the last time</b-form-text>
+        </b-col>
+        <b-col class="text-right">
           <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
-          <b-button type="reset" variant="danger">Submit</b-button>
+          <b-button type="reset" variant="danger">Reset</b-button>
         </b-col>
       </b-row>
     </b-form>
