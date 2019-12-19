@@ -8,7 +8,15 @@
 
     <b-row class="mb-4">
       <b-col>
-        <TableResults />
+        <b-card no-body>
+          <b-tabs card>
+            <b-tab title="Your Journey">
+              <TableResults />
+            </b-tab>
+            <b-tab title="Stats & Graphs (coming soon)" disabled>
+            </b-tab>
+          </b-tabs>
+        </b-card>
       </b-col>
     </b-row>
   </div>

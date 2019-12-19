@@ -1,24 +1,22 @@
 <template>
-  <b-card header="Your journey">
-    <b-table
-      :items="resultsTableData"
-      :fields="fields"
+  <b-table
+    :items="resultsTableData"
+    :fields="fields"
     >
-      <template v-slot:cell(hero)="data">
-        <b class="text-info">{{ data.value }}</b>
-      </template>
+    <template v-slot:cell(hero)="data">
+      <b class="text-info">{{ data.value }}</b>
+    </template>
 
-      <template v-slot:cell(timestamp)="data">
-        <time :time="data.value" :title="data.value">{{ data.value | moment('from', 'now') }}</time>
-      </template>
+    <template v-slot:cell(timestamp)="data">
+      <time :time="data.value" :title="data.value">{{ data.value | moment('from', 'now') }}</time>
+    </template>
 
-      <template v-slot:cell(actions)="data">
-        <b-button variant="danger" size="sm" title="Delete Entry" class="button--delete">
-          <unicon name="trash" fill="white" width="15" height="15" />
-        </b-button>
-      </template>
-    </b-table>
-  </b-card>
+    <template v-slot:cell(actions)="data">
+      <b-button variant="danger" size="sm" title="Delete Entry" class="button--delete">
+        <unicon name="trash" fill="white" width="15" height="15" />
+      </b-button>
+    </template>
+  </b-table>
 </template>
 
 <script>

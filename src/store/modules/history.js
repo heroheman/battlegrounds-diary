@@ -47,7 +47,7 @@ const getters = {
         hero: state.heroes.find( h => res.hero === h.id ).name || '',
         tribe: state.tribes.find( t => t.id === res.tribe ).name || '',
         mmr: `${res.mmr} - (${res.difference})`,
-        placement: `${res.placement} (${placementEmoji(res.placement)})`,
+        placement: `${res.placement} ${placementEmoji(res.placement)}`,
         summary: state.summary.find( s => s.id === res.summary ).titleShort || '',
         timestamp: res.timestamp,
       }
