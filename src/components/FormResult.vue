@@ -1,10 +1,10 @@
 <template>
   <b-card header="Add your data">
-    <b-form>
+    <b-form @submit="submitResult" @reset="resetForm">
       <b-row class="mb-4">
         <b-col>
           <!-- HERO SELECTION -->
-          <b-form-select v-model="result.hero" :options="heroOptions">
+          <b-form-select required v-model="result.hero" :options="heroOptions">
             <template v-slot:first>
               <option :value="null" disabled>-- Please select a hero --</option>
             </template>
@@ -13,7 +13,7 @@
 
         <b-col>
           <!-- PLACE SELECTION -->
-          <b-form-select v-model="result.placement">
+          <b-form-select required v-model="result.placement">
             <template v-slot:first>
               <option :value="null" disabled>-- Results --</option>
             </template>
@@ -31,7 +31,7 @@
 
         <b-col>
           <!-- PLACE SELECTION -->
-          <b-form-select v-model="result.tribe" :options="tribeOptions">
+          <b-form-select required v-model="result.tribe" :options="tribeOptions">
             <template v-slot:first>
               <option :value="null" disabled>-- Select tribe --</option>
             </template>
@@ -39,14 +39,14 @@
         </b-col>
       </b-row>
 
-      <b-row>
+      <b-row class="mb-4">
         <b-col>
-          <b-form-input v-model="result.mmr" type="number" placeholder="New MMR" />
+          <b-form-input required v-model="result.mmr" type="number" placeholder="New MMR" />
         </b-col>
 
         <b-col>
           <!-- PLACE SELECTION -->
-          <b-form-select v-model="result.summary" :options="summaryOptions">
+          <b-form-select required v-model="result.summary" :options="summaryOptions">
             <template v-slot:first>
               <option :value="null" disabled>-- How are feeling about this? --</option>
             </template>
@@ -65,14 +65,13 @@
         </b-col>
       </b-row>
 
-      <b-row>
+      <b-row class="mb-4">
         <b-col>
-          <b-button @click="submitResult">
-            Submit
-          </b-button>
+          <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
+          <b-button type="reset" variant="danger">Submit</b-button>
         </b-col>
       </b-row>
-          </b-form>
+    </b-form>
   </b-card>
 </template>
 
@@ -94,7 +93,7 @@ export default {
   }),
   computed: {
     ...mapState('history', [
-      'heroes', 'tribes', 'summary'
+      'heroes', 'tribes', 'summary', 'mmr'
     ]),
     heroOptions () {
       return this.heroes.filter(h => h.active === true).map( hero => {
@@ -123,11 +122,29 @@ export default {
   },
   methods: {
     ...mapActions('history', [
-      'addResult'
+      'addResult', 'setMmr'
     ]),
-    submitResult() {
+    submitResult(e) {
+      e.preventDefault();
       this.result.timestamp = new Date()
-      this.addResult(this.result)
+      this.result.difference = this.result.mmr - this.mmr
+      let temp = {...this.result}
+      this.addResult(temp)
+
+      this.$nextTick(() => {
+        this.setMmr(this.result.mmr)
+      });
+    },
+    resetForm (e) {
+      e.preventDefault();
+      this.result.hero = null
+      this.result.placement = null
+      this.result.tribe = null
+      this.result.mmr = null
+      this.result.summary = null
+      this.result.missed = null
+      this.result.timestamp = null
+      this.result.difference = null
     }
   }
 }
