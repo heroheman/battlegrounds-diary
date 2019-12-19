@@ -1,11 +1,11 @@
 <template>
   <div>
     <b-row>
-      <b-col>
+      <b-col sm="12" md="6" class="mb-4">
         <b-card title="Add your data" tag="section">
           <b-form>
             <b-row>
-              <b-col>
+              <b-col sm="12" md="6">
                 <label for="upgrades">
                   Tavern Upgrades
                   <Popover
@@ -31,7 +31,7 @@
             </b-row>
 
             <b-row>
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="top4-group"
                   label="Top 4"
@@ -49,7 +49,7 @@
                 </b-form-group>
               </b-col>
 
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="first-group"
                   label="First"
@@ -71,7 +71,7 @@
             <hr>
 
             <b-row>
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="minions-group"
                   label="Minions Destroyed"
@@ -86,7 +86,7 @@
                 </b-form-group>
               </b-col>
 
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="players-group"
                   label="Players eliminated"
@@ -103,7 +103,7 @@
             </b-row>
 
             <b-row>
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="triples-group"
                   label="Triples created"
@@ -118,7 +118,7 @@
                 </b-form-group>
               </b-col>
 
-              <b-col>
+              <b-col sm="12" md="6">
                 <b-form-group
                   id="time-group"
                   label="Time played (in h)"
@@ -139,7 +139,7 @@
         </b-card>
       </b-col>
 
-      <b-col>
+      <b-col sm="12" md="6" class="mb-4">
         <b-card class="mb-3" header="Results" tag="section" header-bg-variant="default">
           <dl>
             <dt>Games Played: </dt>
@@ -151,9 +151,9 @@
             <dt>Average Top4:</dt>
             <dd>{{ winsFour }}%</dd>
           </dl>
-        </b-card>
 
-        <b-card header="Results" tag="section" header-bg-variant="default">
+          <hr>
+
           <dl>
             <dt>Average Minions destroyed:</dt>
             <dd>{{ killedMinions }} per Match</dd>
