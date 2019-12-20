@@ -39,10 +39,15 @@
             <unicon name="comment-lines" fill="white" width="15" height="15" />
           </b-button>
 
-          <b-button v-b-modal.delete-modal
-                    variant="danger" size="sm" title="Delete Entry" class="button--delete">
+          <b-button v-b-modal="`delete-modal-${row.item.id}`"
+            variant="danger" size="sm" title="Delete Entry" class="button--delete">
             <unicon name="trash" fill="white" width="15" height="15" />
           </b-button>
+
+          <b-modal :id="`delete-modal-${row.item.id}`" title="Delete Entry?">
+            <p class="my-4">Are you sure?</p>
+          </b-modal>
+
         </div>
 
       </template>
@@ -55,10 +60,6 @@
         </b-card>
       </template>
     </b-table>
-
-    <b-modal id="delete-modal" title="Delete Entry?">
-      <p class="my-4">Are you sure?</p>
-    </b-modal>
 
   </div>
 </template>

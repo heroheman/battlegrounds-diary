@@ -45,6 +45,7 @@ const getters = {
   resultsTableData: state => {
     return state.results.map(res => {
       return {
+        id: res.id,
         hero: state.heroes.find( h => res.hero === h.id ).name || '',
         tribe: state.tribes.find( t => t.id === res.tribe ).name || '',
         mmr: res.mmr,
