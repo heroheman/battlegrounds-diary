@@ -10,6 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/history',
+    },
+    {
+      path: '/calculator',
       name: 'Calculator',
       component: Calculator
     },
