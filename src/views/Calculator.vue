@@ -16,7 +16,7 @@
                 </label>
                 <b-input
                   id="upgrades"
-                  v-model="user.upgrades"
+                  v-model="upgrades"
                   type="number"
                   required
                   placeholder="Required"
@@ -40,7 +40,7 @@
                   >
                   <b-form-input
                     id="top4-1"
-                    v-model="user.top4"
+                    v-model="top4"
                     type="number"
                     required
                     placeholder="Required"
@@ -58,7 +58,7 @@
                   >
                   <b-form-input
                     id="first"
-                    v-model="user.first"
+                    v-model="first"
                     type="number"
                     required
                     placeholder="Required"
@@ -79,7 +79,7 @@
                   >
                   <b-form-input
                     id="minions-destroyed"
-                    v-model="user.minionsKilled"
+                    v-model="minionsKilled"
                     type="number"
                     >
                   </b-form-input>
@@ -94,7 +94,7 @@
                   >
                   <b-form-input
                     id="players"
-                    v-model="user.playersKilled"
+                    v-model="playersKilled"
                     type="number"
                     >
                   </b-form-input>
@@ -111,7 +111,7 @@
                   >
                   <b-form-input
                     id="triples"
-                    v-model="user.triplesCreated"
+                    v-model="triplesCreated"
                     type="number"
                     >
                   </b-form-input>
@@ -126,7 +126,7 @@
                   >
                   <b-form-input
                     id="time"
-                    v-model="user.timePlayed"
+                    v-model="timePlayed"
                     type="number"
                     >
                   </b-form-input>
@@ -175,42 +175,44 @@
 
 <script>
 import Popover from '@/components/Popover'
+import { mapFields } from 'vuex-map-fields'
+
 export default {
   name: "Calculator",
   components: { Popover },
   data: () => ({
-    averageTavernUpgrades: 4.5,
-    user: {
-      top4: '158',
-      first: '30',
-      upgrades: '1231',
-      minionsKilled: '26167',
-      triplesCreated: '654',
-      playersKilled: '211',
-      timePlayed: '110',
-    }
+    averageTavernUpgrades: 4.5
   }),
   computed: {
+    ...mapFields('calculator', [
+      'top4',
+      'first',
+      'upgrades',
+      'minionsKilled',
+      'triplesCreated',
+      'playersKilled',
+      'timePlayed',
+    ]),
     amount: function () {
-      return this.precise(this.user.upgrades / this.averageTavernUpgrades)
+      return this.precise(this.upgrades / this.averageTavernUpgrades)
     },
     winsOne: function () {
-      return this.precise((this.user.first * 100) / this.amount)
+      return this.precise((this.first * 100) / this.amount)
     },
     winsFour: function () {
-      return this.precise((this.user.top4 * 100) / this.amount)
+      return this.precise((this.top4 * 100) / this.amount)
     },
     killedMinions: function () {
-      return this.precise(this.user.minionsKilled / this.amount)
+      return this.precise(this.minionsKilled / this.amount)
     },
     killedPlayers: function () {
-      return this.precise(this.user.playersKilled / this.amount)
+      return this.precise(this.playersKilled / this.amount)
     },
     triples: function () {
-      return this.precise(this.user.triplesCreated / this.amount)
+      return this.precise(this.triplesCreated / this.amount)
     },
     time: function () {
-      return this.precise((this.user.timePlayed * 60) / this.amount)
+      return this.precise((this.timePlayed * 60) / this.amount)
     },
   },
   methods: {
