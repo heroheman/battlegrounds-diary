@@ -2,8 +2,10 @@
   <div>
     <b-table
       responsive
-      :items="resultsTableData"
       :fields="fields"
+      :items="resultsTableData"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
       >
 
       <template v-slot:table-colgroup="scope">
@@ -66,13 +68,15 @@ import { mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
+    sortBy: 'timestamp',
+    sortDesc: true,
     fields: [
       { key: 'hero', label: 'Hero' },
       { key: 'placement', label: 'Pos' },
       { key: 'mmr', label: 'MMR' },
       { key: 'tribe', label: 'Tribe' },
       { key: 'summary', label: 'Summary' },
-      { key: 'timestamp', label: 'Date' },
+      { key: 'timestamp', label: 'Date', sortable: true },
       { key: 'actions', label: '' },
     ]
   }),
