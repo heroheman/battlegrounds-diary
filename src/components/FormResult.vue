@@ -1,6 +1,6 @@
 <template>
   <b-card header="Add your data">
-    <b-form @submit="submitResult" @reset="resetForm">
+    <b-form @submit="submitResult" @reset="handleReset">
       <b-row>
         <b-col sm="12" md="4" class="mb-4">
           <!-- HERO SELECTION -->
@@ -157,10 +157,14 @@ export default {
 
       this.$nextTick(() => {
         this.setMmr(this.result.mmr)
+        this.resetForm()
       });
     },
-    resetForm (e) {
-      e.preventDefault();
+    handleReset(e) {
+      e.preventDefault()
+      this.resetForm()
+    },
+    resetForm () {
       this.result.hero = null
       this.result.placement = null
       this.result.tribe = null
