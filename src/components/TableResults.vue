@@ -44,7 +44,13 @@
             <unicon name="trash" fill="white" width="15" height="15" />
           </b-button>
 
-          <b-modal :id="`delete-modal-${row.item.id}`" title="Delete Entry?">
+          <b-modal :id="`delete-modal-${row.item.id}`"
+            header-bg-variant="danger"
+            header-text-variant="light"
+            ok-variant="danger"
+            ok-title="DELETE"
+            title="Delete Entry?"
+            @ok="handleDelete(row.item.id)">
             <p class="my-4">Are you sure?</p>
           </b-modal>
 
@@ -65,7 +71,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
@@ -86,6 +92,14 @@ export default {
       'resultsTableData'
     ]),
   },
+  methods: {
+    ...mapActions('history', [
+      'deleteResult'
+    ]),
+    handleDelete(id) {
+      console.log(id)
+    }
+  }
 }
 </script>
 
