@@ -22,9 +22,12 @@
 
       <template v-slot:cell(mmr)="data">
         {{data.item.mmr}}
-        <span v-if="data.item.difference > 0" class="text-success">+{{data.item.difference}}</span>
-        <span v-else-if="data.item.difference === 0">{{data.item.difference}}</span>
-        <span v-else class="text-danger">{{data.item.difference}}</span>
+        <span v-if="data.item.missed !== 'true'" style="padding-left: 3px;">
+          <small v-if="data.item.difference > 0" class="text-success">+{{data.item.difference}}</small>
+          <small v-else-if="data.item.difference === 0">{{data.item.difference}}</small>
+          <small v-else class="text-danger">{{data.item.difference}}</small>
+        </span>
+
       </template>
 
       <template v-slot:cell(timestamp)="data">

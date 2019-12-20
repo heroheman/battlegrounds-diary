@@ -56,6 +56,7 @@ const getters = {
         summary: state.summary.find( s => s.id === res.summary ).titleShort || '',
         timestamp: res.timestamp,
         note: res.note,
+        missed: res.missed,
         last: arr.length - 1 === index ? true : false
       }
     })
