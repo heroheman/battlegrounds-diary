@@ -45,7 +45,7 @@ const actions = {
 
 const getters = {
   resultsTableData: state => {
-    return state.results.map(res => {
+    return state.results.map((res, index, arr) => {
       return {
         id: res.id,
         hero: state.heroes.find( h => res.hero === h.id ).name || '',
@@ -56,6 +56,7 @@ const getters = {
         summary: state.summary.find( s => s.id === res.summary ).titleShort || '',
         timestamp: res.timestamp,
         note: res.note,
+        last: arr.length - 1 === index ? true : false
       }
     })
   }

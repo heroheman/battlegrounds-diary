@@ -40,6 +40,7 @@
           </b-button>
 
           <b-button v-b-modal="`delete-modal-${row.item.id}`"
+            v-if="row.item.last"
             variant="danger" size="sm" title="Delete Entry" class="button--delete">
             <unicon name="trash" fill="white" width="15" height="15" />
           </b-button>
