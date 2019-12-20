@@ -19,7 +19,9 @@ const mutations = {
   SET_MMR: (state, payload) => {
     state.mmr = payload
   },
-  DELETE_RESULT: () => {
+  DELETE_RESULT: (state, id) => {
+    const index = state.results.findIndex(result => result.id == id)
+    state.results.splice(index, 1)
   },
   UPDATE_RESULT: () => {
   }

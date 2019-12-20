@@ -97,7 +97,7 @@ export default {
       'deleteResult'
     ]),
     handleDelete(id) {
-      console.log(id)
+      this.deleteResult(id)
     }
   }
 }
