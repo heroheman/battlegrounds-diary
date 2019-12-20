@@ -84,7 +84,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.b-table tbody td {
+  white-space: nowrap !important;
+}
 
 colgroup .hero {min-width: 200px;}
 colgroup .placement { min-width: 100px; }
@@ -94,9 +97,6 @@ colgroup .summary { width: 100px; }
 colgroup .timestamp { width: 150px; }
 colgroup .actions { width: 100px; }
 
-.table td {
-  white-space: nowrap !important;
-}
 
 .button--delete {
   padding: 0.15rem 0.5rem;
