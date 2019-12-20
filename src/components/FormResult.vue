@@ -147,7 +147,7 @@ export default {
     submitResult(e) {
       e.preventDefault();
       this.result.timestamp = new Date()
-      if (this.result.missed === 'true' || !this.results.length) {
+      if (this.result.missed === 'true') {
         this.result.difference = 0
       } else {
         this.result.difference = this.result.mmr - this.mmr
