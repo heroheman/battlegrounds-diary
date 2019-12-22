@@ -18,11 +18,12 @@
     <b-row class="mb-4">
       <b-col>
         <b-card no-body>
-          <b-tabs card>
+          <b-tabs card lazy>
             <b-tab title="Your Journey">
               <TableResults />
             </b-tab>
-            <b-tab title="Stats & Graphs (soon)" disabled>
+            <b-tab title="Stats & Graphs (soon)">
+              <ChartResults />
             </b-tab>
           </b-tabs>
         </b-card>
@@ -35,10 +36,11 @@
 import { mapState, mapActions } from 'vuex'
 import FormResult from '@/components/FormResult'
 import TableResults from '@/components/TableResults'
+import ChartResults from '@/components/ChartResults'
 export default {
   name: "History",
   components: {
-    FormResult, TableResults
+    FormResult, TableResults, ChartResults
   },
   data: () => ({
     mmrPoints: ''

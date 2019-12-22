@@ -60,6 +60,26 @@ const getters = {
         last: arr.length - 1 === index ? true : false
       }
     })
+  },
+  mmrChartData: state => resultsLength => {
+    let arr = []
+    for (let [index, result]of state.results.entries()) {
+      if (index < resultsLength) {
+        arr.push(result.mmr)
+      }
+    }
+    return arr;
+  },
+  mmrChartDataLabels: state => resultsLength => {
+    let arr = []
+    for (let [index, res]of state.results.entries()) {
+      if (index < resultsLength) {
+        let hero = state.heroes.find( h => res.hero === h.id ).name
+        let tribe = state.tribes.find( t => res.tribe === t.id ).name
+        arr.push(`${hero} ${tribe}`)
+      }
+    }
+    return arr;
   }
 }
 
