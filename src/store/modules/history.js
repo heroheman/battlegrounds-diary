@@ -62,25 +62,19 @@ const getters = {
     })
   },
   mmrChartData: state => resultsLength => {
-    let arr = []
+    let mmr = {
+      labels: [],
+      data: []
+    }
     for (let [index, result]of state.results.entries()) {
       if (index < resultsLength) {
-        arr.push(result.mmr)
+        mmr.data.push(result.mmr)
+        let hero = state.heroes.find( h => result.hero === h.id ).name
+        let tribe = state.tribes.find( t => result.tribe === t.id ).name
+        mmr.labels.push(`${hero} / ${tribe}`)
       }
     }
-    return arr;
-  },
-  mmrChartDataLabels: state => resultsLength => {
-    let arr = []
-    for (let [index, res]of state.results.entries()) {
-      if (index < resultsLength) {
-        let hero = state.heroes.find( h => res.hero === h.id ).name
-        let tribe = state.tribes.find( t => res.tribe === t.id ).name
-        arr.push(`${hero} ${tribe}`)
-      }
-    }
-    arr.push('')
-    return arr;
+    return mmr;
   },
   heroesChartData: state => {
     let heroes = {

@@ -56,11 +56,10 @@ export default {
     ...mapGetters('history', [
       'results',
       'mmrChartData',
-      'mmrChartDataLabels'
     ]),
     lineChartData () {
       return {
-        labels: this.mmrChartDataLabels(this.lineMaxItems),
+        labels: this.mmrChartData(this.lineMaxItems).labels,
         datasets: [
           {
             datalabels: {
@@ -80,13 +79,14 @@ export default {
             fill: false,
             showLine: true,
             borderColor: '#f87979',
-            data: this.mmrChartData(this.lineMaxItems)
+            data: this.mmrChartData(this.lineMaxItems).data
           }
         ]
       }
     }
   },
   mounted () {
+    console.log(this.mmrChartData(this.lineMaxItems))
   }
 }
 </script>
