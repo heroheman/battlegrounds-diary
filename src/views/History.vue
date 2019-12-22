@@ -21,7 +21,7 @@
             <b-tab title="Your Journey">
               <TableResults />
             </b-tab>
-            <b-tab title="Graphs">
+            <b-tab title="Graphs (Beta)">
               <ChartResults />
             </b-tab>
           </b-tabs>

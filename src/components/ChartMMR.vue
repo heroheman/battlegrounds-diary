@@ -63,6 +63,19 @@ export default {
         labels: this.mmrChartDataLabels(this.lineMaxItems),
         datasets: [
           {
+            datalabels: {
+              labels: {
+                value: {
+                  display: 'auto',
+                  anchor: 'end',
+                  align: 'center',
+                  clamp: true,
+                  backgroundColor: '#f2f2f2',
+                  borderRadius: 4,
+                  color: '#000'
+                }
+              }
+            },
             label: 'MMR',
             fill: false,
             showLine: true,

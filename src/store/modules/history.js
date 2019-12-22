@@ -79,6 +79,7 @@ const getters = {
         arr.push(`${hero} ${tribe}`)
       }
     }
+    arr.push('')
     return arr;
   },
   heroesChartData: state => {

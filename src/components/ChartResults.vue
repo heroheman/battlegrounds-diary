@@ -1,20 +1,22 @@
 <template>
   <div>
-    <p>
-      <small>
-        <strong>Note:</strong>
-        Right-click on chart to save as image
-      </small>
-    </p>
-    <ChartMmr class="mb-5" />
-    <b-row>
-      <b-col sm="12" md="6">
-        <ChartHeroes />
-      </b-col>
-      <b-col sm="12" md="6">
-        <ChartTribes />
-      </b-col>
-    </b-row>
+    <div class="content-charts">
+      <p>
+        <small>
+          <strong>Note:</strong>
+          Right-click on chart to save as image
+        </small>
+      </p>
+      <ChartMmr class="mb-5" />
+      <b-row>
+        <b-col sm="12" md="6" class="mb-5">
+          <ChartHeroes />
+        </b-col>
+        <b-col sm="12" md="6" class="mb-5">
+          <ChartTribes />
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 
