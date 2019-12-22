@@ -1,7 +1,10 @@
 <template>
   <div class="charts">
     <b-row>
-      <b-col cols="4" class="text-right">
+      <b-col>
+        <h3>MMR History</h3>
+      </b-col>
+      <b-col sm="12" md="4" class="text-right">
         <!-- <label for="amount">Amount</label> -->
         <b-form-select id="amount" v-model="lineMaxItems">
           <option value="5">5</option>
@@ -26,12 +29,19 @@ import ChartLine from '@/components/chart-blueprints/Line'
 export default {
   name: 'ChartMMR',
   components: { ChartLine },
+  props: ['chartData', 'options'],
   data: () => ({
-    lineMaxItems: 5,
+    lineMaxItems: 10,
     lineMmr: {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+          padding: 10
+        },
+        legend: {
+          display: false
+        },
         scales: {
           xAxes: [{
             ticks: {
@@ -42,9 +52,9 @@ export default {
       }
     }
   }),
-  props: ['chartData', 'options'],
   computed: {
     ...mapGetters('history', [
+      'results',
       'mmrChartData',
       'mmrChartDataLabels'
     ]),
@@ -54,7 +64,6 @@ export default {
         datasets: [
           {
             label: 'MMR',
-            lineTension: 0,
             fill: false,
             showLine: true,
             borderColor: '#f87979',

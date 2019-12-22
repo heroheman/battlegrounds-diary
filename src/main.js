@@ -3,6 +3,11 @@ import App from './App.vue'
 import store from './store/'
 import router from './router'
 
+import Chart from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+// Chart.defaults.global.plugins.datalabels.color = '#ffffff'
+Chart.plugins.unregister(ChartDataLabels);
+
 import BootstrapVue from 'bootstrap-vue'
 import Moment from 'vue-moment'
 import Unicon from 'vue-unicons'

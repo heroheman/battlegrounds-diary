@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <b-modal
       id="modal-initial-mmr" title="Enter your initial MMR"
       @ok="handleMmrUpdate()"
@@ -22,7 +21,7 @@
             <b-tab title="Your Journey">
               <TableResults />
             </b-tab>
-            <b-tab title="Stats & Graphs (soon)">
+            <b-tab title="Graphs">
               <ChartResults />
             </b-tab>
           </b-tabs>

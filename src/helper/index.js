@@ -20,4 +20,30 @@ export function uuidv4() {
   );
 }
 
+export const howMany = (arrayOfObj, property) => {
+  const counts = arrayOfObj.reduce((acc, obj) => {
+      const value = obj[property]
+      return acc.set(value, acc.has(value) ? acc.get(value) + 1 : 1)
+    }, new Map())
+
+  return search => counts.get(search) || 0
+}
+
+export  function getRandomColor() {
+  const letters = '0123456789ABCDEF'.split('');
+  let color = '#';
+  for (var i = 0; i < 6; i++ ) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+export function getRandomColorArray(amount) {
+  let colors = []
+  for(let i = 0; i < amount; i++) {
+    colors.push(getRandomColor())
+  }
+  return colors
+}
+
 export default placementEmoji

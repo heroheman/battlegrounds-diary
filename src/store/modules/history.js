@@ -2,7 +2,7 @@ import dataHeroes from '@/data/heroes.json'
 import dataTribes from '@/data/tribes.json'
 import dataSummary from '@/data/summary.json'
 
-import { placementEmoji, uuidv4 } from '@/helper'
+import { placementEmoji, uuidv4, howMany } from '@/helper'
 
 const state = {
   heroes: dataHeroes,
@@ -80,6 +80,36 @@ const getters = {
       }
     }
     return arr;
+  },
+  heroesChartData: state => {
+    let heroes = {
+      labels: [],
+      data: []
+    }
+
+    for (let res of state.heroes) {
+      let games = howMany(state.results, 'hero')(res.id)
+      if (games > 0) {
+        heroes.labels.push(res.name)
+        heroes.data.push(games)
+      }
+    }
+    return heroes
+  },
+  tribeChartData: state => {
+    let tribes = {
+      labels: [],
+      data: []
+    }
+
+    for (let res of state.tribes) {
+      let wins = howMany(state.results, 'tribe')(res.id)
+      if (wins > 0) {
+        tribes.labels.push(res.name)
+        tribes.data.push(wins)
+      }
+    }
+    return tribes
   }
 }
 
