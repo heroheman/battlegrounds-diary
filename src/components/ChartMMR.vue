@@ -1,10 +1,10 @@
 <template>
   <div class="charts mb-4">
     <b-row>
-      <b-col cols="6" sm="8" md="8">
+      <b-col cols="4" sm="6" md="6">
         <h3>MMR</h3>
       </b-col>
-      <b-col cols="6" sm="4" md="4" class="text-right">
+      <b-col cols="6" sm="5" md="5" class="text-right">
         <!-- <label for="amount">Amount</label> -->
         <b-form-select id="amount" v-model="lineMaxItems">
           <option value="5">Last 5 games</option>
@@ -14,6 +14,12 @@
           <option value="100">Last 100 games</option>
           <option value="0">All</option>
         </b-form-select>
+      </b-col>
+      <b-col cols="2" sm="1" md="1">
+        <b-button  title="Show label at points"
+          size="md" variant="outline-dark" @click="toggleGraphLabels()">
+          <unicon name="info-circle" fill="#888" width="15" height="15" />
+        </b-button>
       </b-col>
     </b-row>
     <b-row>
@@ -34,6 +40,7 @@ export default {
   props: ['chartData', 'options'],
   data: () => ({
     lineMaxItems: 10,
+    showLabelsAtGraph: false,
     lineMmr: {
       options: {
         responsive: true,
@@ -48,6 +55,11 @@ export default {
           xAxes: [{
             ticks: {
               display: false //this will remove only the label
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              stepSize: 50
             }
           }]
         }
@@ -69,13 +81,13 @@ export default {
             datalabels: {
               labels: {
                 value: {
-                  display: 'auto',
+                  display: this.showLabelsAtGraph,
                   anchor: 'end',
-                  align: 'center',
+                  align: 'end',
                   clamp: true,
-                  backgroundColor: '#f2f2f2',
+                  backgroundColor: '#f87979',
                   borderRadius: 4,
-                  color: '#000'
+                  color: '#fff'
                 }
               }
             },
@@ -87,6 +99,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  methods: {
+    toggleGraphLabels: function () {
+      this.showLabelsAtGraph = !this.showLabelsAtGraph
     }
   },
   mounted () {
