@@ -3,7 +3,14 @@
     <b-row>
       <b-col>
         <h3>Games by Tribe</h3>
-        <ChartPie :chartData="pieChartData" :options="pieHeroes.options" />
+        <b-tabs lazy>
+          <b-tab title="Pie">
+            <ChartPie :chartData="pieChartData" :options="pieHeroes.options" />
+          </b-tab>
+          <b-tab title="List">
+            <b-table-lite :items="tribeChartDataTable"></b-table-lite>
+          </b-tab>
+        </b-tabs>
       </b-col>
     </b-row>
   </div>
@@ -32,7 +39,8 @@ export default {
   computed: {
     ...mapGetters('history', [
       'results',
-      'tribeChartData'
+      'tribeChartData',
+      'tribeChartDataTable'
     ]),
     pieChartData () {
       return {

@@ -92,6 +92,21 @@ const getters = {
     }
     return heroes
   },
+  heroesChartDataTable: state => {
+    let heroesTable = []
+    for (let res of state.heroes) {
+      let games = howMany(state.results, 'hero')(res.id)
+      if (games > 0) {
+        heroesTable.push({
+          hero: res.name,
+          gamesPlayed: games
+        })
+      }
+    }
+    // sort desc
+    heroesTable = heroesTable.sort((a, b) => b.gamesPlayed - a.gamesPlayed);
+    return heroesTable
+  },
   tribeChartData: state => {
     let tribes = {
       labels: [],
@@ -106,7 +121,22 @@ const getters = {
       }
     }
     return tribes
-  }
+  },
+  tribeChartDataTable: state => {
+    let arr = []
+    for (let res of state.tribes) {
+      let games = howMany(state.results, 'tribe')(res.id)
+      if (games > 0) {
+        arr.push({
+          tribe: res.name,
+          gamesPlayed: games
+        })
+      }
+    }
+    // sort desc
+    arr = arr.sort((a, b) => b.gamesPlayed - a.gamesPlayed);
+    return arr
+  },
 }
 
 export default {
