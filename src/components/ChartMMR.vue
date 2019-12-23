@@ -6,7 +6,7 @@
       </b-col>
       <b-col cols="6" sm="5" md="5" class="text-right">
         <!-- <label for="amount">Amount</label> -->
-        <b-form-select id="amount" v-model="lineMaxItems">
+        <b-form-select :selected="lineMaxItems" id="amount" v-model="lineMaxItems">
           <option value="5">Last 5 games</option>
           <option value="10">Last 10 games</option>
           <option value="25">Last 25 games</option>
@@ -39,14 +39,12 @@ export default {
   components: { ChartLine },
   props: ['chartData', 'options'],
   data: () => ({
-    lineMaxItems: 10,
+    lineMaxItems: 25,
     showLabelsAtGraph: false,
     lineMmr: {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        layout: {
-        },
         legend: {
           display: false
         },
