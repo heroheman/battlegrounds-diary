@@ -5,6 +5,8 @@ import Calculator from '@/views/Calculator'
 import History from '@/views/History'
 import Privacy from '@/views/Privacy'
 import Imprint from '@/views/Imprint'
+import About from '@/views/About'
+import Changelog from '@/views/Changelog'
 
 Vue.use(Router)
 
@@ -23,6 +25,16 @@ export default new Router({
       path: '/history',
       name: 'History',
       component: History
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/changelog',
+      name: 'Changelog',
+      component: Changelog
     },
     {
       path: '/privacy',
