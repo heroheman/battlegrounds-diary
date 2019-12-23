@@ -17,6 +17,7 @@
         <strong>2019-12-23:</strong>
         <ul>
           <li>Add Listview to PieCharts</li>
+          <li>Add Satisfaction PieChart</li>
         </ul>
       </li>
     </ul>
