@@ -105,9 +105,6 @@ export default {
     toggleGraphLabels: function () {
       this.showLabelsAtGraph = !this.showLabelsAtGraph
     }
-  },
-  mounted () {
-    console.log(this.mmrChartData(this.lineMaxItems))
   }
 }
 </script>
