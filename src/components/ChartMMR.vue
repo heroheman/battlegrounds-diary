@@ -1,17 +1,17 @@
 <template>
   <div class="charts mb-4">
     <b-row class="mb-3">
-      <b-col cols="4" sm="6" md="6">
+      <b-col cols="6" sm="6" md="6">
         <h3>Ranking</h3>
       </b-col>
-      <b-col cols="6" sm="5" md="5" class="text-right">
+      <b-col cols="4" sm="5" md="5" class="text-right">
         <!-- <label for="amount">Amount</label> -->
         <b-form-select :selected="lineMaxItems" id="amount" v-model="lineMaxItems">
-          <option value="5">Last 5 games</option>
-          <option value="10">Last 10 games</option>
-          <option value="25">Last 25 games</option>
-          <option value="50">Last 50 games</option>
-          <option value="100">Last 100 games</option>
+          <option value="5">Last 5</option>
+          <option value="10">Last 10</option>
+          <option value="25">Last 25</option>
+          <option value="50">Last 50</option>
+          <option value="100">Last 100</option>
           <option value="0">All</option>
         </b-form-select>
       </b-col>

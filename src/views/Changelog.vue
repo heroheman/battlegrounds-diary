@@ -7,10 +7,16 @@
         Initial Release
       </li>
       <li>
-        <strong>2019-12-23:</strong>
+        <strong>2019-12-22:</strong>
         <ul>
           <li>Add early drafts of charts</li>
           <li>This Changelog and About Page</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2019-12-23:</strong>
+        <ul>
+          <li>Add Listview to PieCharts</li>
         </ul>
       </li>
     </ul>
