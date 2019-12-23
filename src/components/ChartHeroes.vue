@@ -2,9 +2,8 @@
   <div class="charts">
     <b-row>
       <b-col>
-        <h3>Games by Hero</h3>
-
-        <b-tabs lazy>
+        <h3 class="h4 position-absolute">Games by Hero</h3>
+        <b-tabs lazy align="right">
           <b-tab title="Pie">
             <ChartDoughnut :chartData="pieChartData" :options="pieHeroes.options" />
           </b-tab>

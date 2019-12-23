@@ -1,12 +1,6 @@
 <template>
   <div>
     <div class="content-charts">
-      <p>
-        <small>
-          <strong>Note:</strong>
-          Right-click on chart to save as image
-        </small>
-      </p>
       <ChartMmr class="mb-5" />
       <b-row>
         <b-col sm="12" md="6" class="mb-5">
@@ -16,6 +10,12 @@
           <ChartTribes />
         </b-col>
       </b-row>
+      <b-alert show>
+        <small>
+          <strong>Note for Desktop User:</strong>
+          Right-click on chart to save as image
+        </small>
+      </b-alert>
     </div>
   </div>
 </template>

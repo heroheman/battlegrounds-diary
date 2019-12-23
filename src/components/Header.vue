@@ -2,7 +2,9 @@
   <header>
     <b-navbar  toggleable="lg" type="dark" variant="dark">
       <b-container>
-        <b-navbar-brand>Battlegrounds Diary</b-navbar-brand>
+        <b-navbar-brand>
+          Battlegrounds Diary
+        </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
