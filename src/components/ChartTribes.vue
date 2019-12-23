@@ -5,7 +5,7 @@
         <h3>Games by Tribe</h3>
         <b-tabs lazy>
           <b-tab title="Pie">
-            <ChartPie :chartData="pieChartData" :options="pieHeroes.options" />
+            <ChartDoughnut :chartData="pieChartData" :options="pieHeroes.options" />
           </b-tab>
           <b-tab title="List">
             <b-table-lite :items="tribeChartDataTable"></b-table-lite>
@@ -18,12 +18,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import ChartPie from '@/components/chart-blueprints/Pie'
+import ChartDoughnut from '@/components/chart-blueprints/Doughnut'
 import { getRandomColorArray } from '@/helper'
 
 export default {
   props: ['chartData', 'options'],
-  components: { ChartPie },
+  components: { ChartDoughnut },
   data: () => ({
     pieHeroes: {
       options: {
