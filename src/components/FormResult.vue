@@ -41,7 +41,7 @@
 
       <b-row class="mb-4">
         <b-col sm="12" md="4" class="mb-4">
-          <b-form-input required v-model="result.mmr" type="number" placeholder="New MMR" />
+          <b-form-input required v-model="result.mmr" type="number" placeholder="New Rating" />
         </b-col>
 
         <b-col sm="12" md="4" class="mb-4">
@@ -147,7 +147,7 @@ export default {
     submitResult(e) {
       e.preventDefault();
       this.result.timestamp = new Date()
-      if (this.result.missed === 'true') {
+      if (this.result.missed === 'true' || !this.results.length) {
         this.result.difference = 0
       } else {
         this.result.difference = this.result.mmr - this.mmr
