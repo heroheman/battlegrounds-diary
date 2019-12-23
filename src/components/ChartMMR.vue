@@ -1,16 +1,18 @@
 <template>
-  <div class="charts">
+  <div class="charts mb-4">
     <b-row>
-      <b-col>
-        <h3>MMR History</h3>
+      <b-col cols="6" sm="8" md="8">
+        <h3>MMR</h3>
       </b-col>
-      <b-col sm="12" md="4" class="text-right">
+      <b-col cols="6" sm="4" md="4" class="text-right">
         <!-- <label for="amount">Amount</label> -->
         <b-form-select id="amount" v-model="lineMaxItems">
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
+          <option value="5">Last 5 games</option>
+          <option value="10">Last 10 games</option>
+          <option value="25">Last 25 games</option>
+          <option value="50">Last 50 games</option>
+          <option value="100">Last 100 games</option>
+          <option value="0">All</option>
         </b-form-select>
       </b-col>
     </b-row>
@@ -23,7 +25,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import ChartLine from '@/components/chart-blueprints/Line'
 
 export default {
@@ -53,8 +55,10 @@ export default {
     }
   }),
   computed: {
-    ...mapGetters('history', [
+    ...mapState('history', [
       'results',
+    ]),
+    ...mapGetters('history', [
       'mmrChartData',
     ]),
     lineChartData () {

@@ -66,14 +66,15 @@ const getters = {
       labels: [],
       data: []
     }
-    for (let [index, result]of state.results.entries()) {
-      if (index < resultsLength) {
-        mmr.data.push(result.mmr)
-        let hero = state.heroes.find( h => result.hero === h.id ).name
-        let tribe = state.tribes.find( t => result.tribe === t.id ).name
-        mmr.labels.push(`${hero} / ${tribe}`)
-      }
+    for (let result of state.results) {
+      mmr.data.push(result.mmr)
+      let hero = state.heroes.find( h => result.hero === h.id ).name
+      let tribe = state.tribes.find( t => result.tribe === t.id ).name
+      mmr.labels.push(`${hero} / ${tribe}`)
     }
+
+    mmr.data = mmr.data.slice(resultsLength * -1)
+    mmr.labels = mmr.labels.slice(resultsLength * -1)
     return mmr;
   },
   heroesChartData: state => {
