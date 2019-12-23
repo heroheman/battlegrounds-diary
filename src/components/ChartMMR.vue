@@ -1,8 +1,8 @@
 <template>
   <div class="charts mb-4">
-    <b-row>
+    <b-row class="mb-3">
       <b-col cols="4" sm="6" md="6">
-        <h3>MMR</h3>
+        <h3>Ranking</h3>
       </b-col>
       <b-col cols="6" sm="5" md="5" class="text-right">
         <!-- <label for="amount">Amount</label> -->
@@ -46,7 +46,6 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: 10
         },
         legend: {
           display: false
