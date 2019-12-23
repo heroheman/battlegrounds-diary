@@ -137,6 +137,21 @@ const getters = {
     arr = arr.sort((a, b) => b.gamesPlayed - a.gamesPlayed);
     return arr
   },
+  satisfactionChartData: state => {
+    let satis = {
+      labels: [],
+      data: []
+    }
+
+    for (let sum of state.summary) {
+      let summary = howMany(state.results, 'summary')(sum.id)
+      if (summary > 0) {
+        satis.labels.push(sum.titleShort)
+        satis.data.push(summary)
+      }
+    }
+    return satis
+  },
 }
 
 export default {

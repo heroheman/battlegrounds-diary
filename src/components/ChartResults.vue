@@ -10,6 +10,11 @@
           <ChartTribes />
         </b-col>
       </b-row>
+      <b-row>
+        <b-col sm="12" md="6" class="mb-5">
+          <ChartSummary />
+        </b-col>
+      </b-row>
       <b-alert show>
         <small>
           <strong>Note for Desktop User:</strong>
@@ -24,9 +29,10 @@
 import ChartMmr from '@/components/ChartMMR'
 import ChartHeroes from '@/components/ChartHeroes'
 import ChartTribes from '@/components/ChartTribes'
+import ChartSummary from '@/components/ChartSummary'
 export default {
   name: 'ChartResults',
-  components: { ChartMmr, ChartHeroes, ChartTribes },
+  components: { ChartMmr, ChartHeroes, ChartTribes, ChartSummary },
 }
 </script>
 
