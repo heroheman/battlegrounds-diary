@@ -152,6 +152,25 @@ const getters = {
     }
     return satis
   },
+  averageGainLose: state => {
+    let ranks = 8
+    let points = []
+    for (let i = 0; i < ranks; i++) {
+      let items = state.results.filter(res => parseInt(res.placement) === (i + 1)) || {}
+      let gains = 0
+      for (let item of items) {
+        gains += item.difference
+      }
+      const tmp = {
+        place: i+1,
+        matches: items.length,
+        average: gains / items.length
+      }
+      points.push(tmp)
+    }
+
+    return points
+  }
 }
 
 export default {
