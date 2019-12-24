@@ -57,6 +57,7 @@ const getters = {
         timestamp: res.timestamp,
         note: res.note,
         missed: res.missed,
+        place: res.placement,
         last: arr.length - 1 === index ? true : false
       }
     })
@@ -159,7 +160,8 @@ const getters = {
       let items = state.results.filter(res => parseInt(res.placement) === (i + 1)) || {}
       let gains = 0
       for (let item of items) {
-        gains += item.difference
+        gains += parseInt(item.difference)
+        // console.log(item.difference, gains)
       }
       const tmp = {
         place: i+1,
