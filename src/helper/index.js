@@ -46,4 +46,8 @@ export function getRandomColorArray(amount) {
   return colors
 }
 
+export function precise (x) {
+  return Number.parseFloat(x).toPrecision(4);
+}
+
 export default placementEmoji

@@ -2,7 +2,7 @@ import dataHeroes from '@/data/heroes.json'
 import dataTribes from '@/data/tribes.json'
 import dataSummary from '@/data/summary.json'
 
-import { placementEmoji, uuidv4, howMany } from '@/helper'
+import { placementEmoji, uuidv4, howMany, precise } from '@/helper'
 
 const state = {
   heroes: dataHeroes,
@@ -166,7 +166,7 @@ const getters = {
       const tmp = {
         place: i+1,
         matches: items.length,
-        average: gains / items.length
+        average: precise(gains / items.length)
       }
       points.push(tmp)
     }
