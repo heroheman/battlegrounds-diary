@@ -28,6 +28,12 @@
           <small v-else class="text-danger">{{data.item.difference}}</small>
         </span>
 
+        <span>
+          <small>
+            <unicon :name="getGainLoseIndicator(data.item.place, data.item.difference)" fill="#ccc" width="15" height="15" />
+          </small>
+        </span>
+
       </template>
 
       <template v-slot:cell(timestamp)="data">
@@ -93,8 +99,9 @@ export default {
   }),
   computed: {
     ...mapGetters('history', [
-      'resultsTableData'
-    ]),
+      'resultsTableData',
+      'averageGainLose'
+    ])
   },
   methods: {
     ...mapActions('history', [
@@ -102,6 +109,14 @@ export default {
     ]),
     handleDelete(id) {
       this.deleteResult(id)
+    },
+    getGainLoseIndicator (place, diff) {
+      const average = this.averageGainLose.find(a => a.place === parseInt(place)).average
+      if (diff > average) {
+        return 'arrow-growth'
+      } else {
+        return 'chart-down'
+      }
     }
   }
 }
