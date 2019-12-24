@@ -3,8 +3,11 @@
     <h3>Changelog</h3>
     <ul>
       <li>
-        <strong>2019-12-21:</strong>
-        Initial Release
+        <strong>2019-12-24:</strong>
+        <ul>
+          <li>Add Table for average MMR Gain/Lose</li>
+          <li>Add indicator to Match Result MMR if number is higher or lower than average</li>
+        </ul>
       </li>
       <li>
         <strong>2019-12-22:</strong>
@@ -14,11 +17,8 @@
         </ul>
       </li>
       <li>
-        <strong>2019-12-23:</strong>
-        <ul>
-          <li>Add Listview to PieCharts</li>
-          <li>Add Satisfaction PieChart</li>
-        </ul>
+        <strong>2019-12-21:</strong>
+        Initial Release
       </li>
     </ul>
 
