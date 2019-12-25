@@ -3,10 +3,15 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2019-12-25:</strong>
+        Add import/export function (very early, barely tested)
+      </li>
+      <li>
         <strong>2019-12-24:</strong>
         <ul>
           <li>Add Table for average MMR Gain/Lose</li>
           <li>Add indicator to Match Result MMR if number is higher or lower than average</li>
+          <li>Merry Christmas</li>
         </ul>
       </li>
       <li>
