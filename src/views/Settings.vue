@@ -51,3 +51,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+textarea {
+  font-size: 10px;
+}
+</style>
