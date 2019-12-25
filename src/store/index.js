@@ -13,7 +13,7 @@ export default new Vuex.Store({
   plugins: [createPersistedState(
     {
       key: 'battleground-history',
-      paths: ['history.results', 'history.mmr', 'calculator']
+      paths: ['history.results','history.resultsBackup', 'history.mmr', 'calculator']
     }
   )]
 })

@@ -9,7 +9,8 @@ const state = {
   tribes: dataTribes,
   summary: dataSummary,
   mmr: null,
-  results: []
+  results: [],
+  resultsBackup: []
 }
 
 const mutations = {
@@ -24,6 +25,22 @@ const mutations = {
     state.results.splice(index, 1)
   },
   UPDATE_RESULT: () => {
+  },
+  SET_IMPORTED_RESULTS: (state, payload) => {
+    state.results = []
+    state.results = payload
+  },
+  SET_BACKUP_RESULTS: (state) => {
+    const backupData = {
+      id: uuidv4(),
+      createdAt: new Date(),
+      data: btoa(JSON.stringify(state.results))
+    }
+    // autocleanup if more than 3
+    if (state.resultsBackup.length > 2) {
+      state.resultsBackup.shift()
+    }
+    state.resultsBackup.push(backupData)
   }
 }
 
@@ -41,9 +58,17 @@ const actions = {
   updateResult ({ commit }, data) {
     commit('UPDATE_RESULT', data)
   },
+  setImportedResults ({ commit, state }, data) {
+    const payload = JSON.parse(atob(data))
+    if (state.results.length > 0) {
+      commit('SET_BACKUP_RESULTS')
+    }
+    commit('SET_IMPORTED_RESULTS', payload)
+  }
 }
 
 const getters = {
+  resultsJSON: state => btoa(JSON.stringify(state.results)),
   resultsTableData: state => {
     return state.results.map((res, index, arr) => {
       return {

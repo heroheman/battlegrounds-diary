@@ -7,6 +7,7 @@ import Privacy from '@/views/Privacy'
 import Imprint from '@/views/Imprint'
 import About from '@/views/About'
 import Changelog from '@/views/Changelog'
+import Settings from '@/views/Settings'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/changelog',
       name: 'Changelog',
       component: Changelog
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
     },
     {
       path: '/privacy',

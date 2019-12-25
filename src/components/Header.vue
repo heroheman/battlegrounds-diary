@@ -17,6 +17,9 @@
           <b-navbar-nav class="ml-auto">
             <b-nav-item to="/about">About</b-nav-item>
             <b-nav-item to="/changelog">Changelog</b-nav-item>
+            <b-nav-item to="/settings">
+              Settings
+            </b-nav-item>
             <b-nav-text class="text-light">
               <strong>
                 MMR:
