@@ -50,4 +50,39 @@ export function precise (x) {
   return Number.parseFloat(x).toPrecision(4);
 }
 
+export function encodeDiaryData (data) {
+  return btoa(JSON.stringify(data))
+}
+
+export function decodeDiaryData (data) {
+  return JSON.parse(atob(data))
+}
+
+export const deepSameKeys = (o1, o2) => {
+  // Get the keys of each object
+  const o1keys = Object.keys(o1).sort();
+  const o2keys = Object.keys(o2).sort();
+  // Make sure they match
+  // If you don't want a string check, you could do
+  // if (o1keys.length !== o2keys.length || !o1keys.every((key, index) => o2keys[index] === key)) {
+  if (o1keys.join() !== o2keys.join()) {
+    // This level doesn't have the same keys
+    return false;
+  }
+  // Check any objects
+  return o1keys.every(key => {
+    const v1 = o1[key];
+    const v2 = o2[key];
+    if (v1 === null) {
+      return v2 === null;
+    }
+    const t1 = typeof v1;
+    const t2 = typeof v2;
+    if (t1 !== t2) {
+      return false;
+    }
+    return t1 === "object" ? deepSameKeys(v1, v2) : true;
+  });
+};
+
 export default placementEmoji
