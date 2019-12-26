@@ -51,11 +51,11 @@ export function precise (x) {
 }
 
 export function encodeDiaryData (data) {
-  return btoa(JSON.stringify(data))
+  return JSON.stringify(data)
 }
 
 export function decodeDiaryData (data) {
-  return JSON.parse(atob(data))
+  return JSON.parse(data)
 }
 
 export const deepSameKeys = (o1, o2) => {

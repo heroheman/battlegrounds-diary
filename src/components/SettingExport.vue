@@ -5,6 +5,7 @@
       class="mb-3"
       :value="resultsJSON">
     </b-textarea>
+    <p>Copy code or download as .txt file</p>
     <b-button class="mb-3" @click="downloadExportCode">
       Download
     </b-button>
@@ -13,7 +14,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { encodeDiaryData } from '@/helper'
 
 export default {
   name: 'SettingsExport',
@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     downloadExportCode() {
-      const exportCode = encodeDiaryData(this.resultsJSON)
+      const exportCode = this.resultsJSON
       const d = new Date();
       const datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
             d.getFullYear() + "_" + ("0" + d.getHours()).slice(-2) + "-" + ("0" + d.getMinutes()).slice(-2);
 
       var link = document.createElement('a')
-      link.download = `bgdiary-data-export-${datestring}.txt`
+      link.download = `bgdiary-data-export-${datestring}.json`
       var blob = new Blob([exportCode], {type: 'text/plain'})
       link.href = window.URL.createObjectURL(blob)
       link.click()
@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+textarea {
+  font-size: 10px;
+}
+</style>

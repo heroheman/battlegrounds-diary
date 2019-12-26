@@ -29,9 +29,3 @@ export default {
   components: { AccBackup, SettingExport, SettingImport },
 }
 </script>
-
-<style scoped>
-textarea {
-  font-size: 10px;
-}
-</style>

@@ -2,7 +2,10 @@ import dataHeroes from '@/data/heroes.json'
 import dataTribes from '@/data/tribes.json'
 import dataSummary from '@/data/summary.json'
 
-import { placementEmoji, uuidv4, howMany, precise } from '@/helper'
+import {
+  placementEmoji, uuidv4, howMany,
+  precise, encodeDiaryData, decodeDiaryData
+} from '@/helper'
 
 const state = {
   heroes: dataHeroes,
@@ -34,7 +37,7 @@ const mutations = {
     const backupData = {
       id: uuidv4(),
       createdAt: new Date(),
-      data: btoa(JSON.stringify(state.results))
+      data: encodeDiaryData(state.results)
     }
     // autocleanup if more than 3
     if (state.resultsBackup.length > 2) {
@@ -59,7 +62,7 @@ const actions = {
     commit('UPDATE_RESULT', data)
   },
   setImportedResults ({ commit, state }, data) {
-    const payload = JSON.parse(atob(data))
+    const payload = decodeDiaryData(data)
     if (state.results.length > 0) {
       commit('SET_BACKUP_RESULTS')
     }
@@ -68,7 +71,7 @@ const actions = {
 }
 
 const getters = {
-  resultsJSON: state => btoa(JSON.stringify(state.results)),
+  resultsJSON: state => encodeDiaryData(state.results),
   resultsTableData: state => {
     return state.results.map((res, index, arr) => {
       return {
