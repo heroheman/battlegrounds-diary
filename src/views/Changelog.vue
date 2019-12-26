@@ -3,6 +3,13 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2019-12-26:</strong>
+        <ul>
+          <li>Reworked import export</li>
+          <li>Download as json, remove base64 encryption</li>
+        </ul>
+      </li>
+      <li>
         <strong>2019-12-25:</strong>
         Add import/export function (very early, barely tested)
       </li>
