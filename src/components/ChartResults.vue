@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="content-charts">
+      <b-table :items="leaderboard"></b-table>
       <ChartMmr class="mb-5" />
       <b-row>
         <b-col sm="12" md="6" class="mb-5">
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ChartMmr from '@/components/ChartMMR'
 import ChartHeroes from '@/components/ChartHeroes'
 import ChartTribes from '@/components/ChartTribes'
@@ -37,6 +39,9 @@ import ChartGainsLose from '@/components/ChartGainsLose'
 export default {
   name: 'ChartResults',
   components: { ChartMmr, ChartHeroes, ChartTribes, ChartSummary, ChartGainsLose },
+  computed: {
+    ...mapGetters('history', ['leaderboard'])
+  }
 }
 </script>
 

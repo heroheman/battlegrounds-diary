@@ -200,6 +200,61 @@ const getters = {
     }
 
     return points
+  },
+  leaderboard: state => {
+    const leaderboard = []
+    for (const hero of state.heroes) {
+      let heroResults = state.results.filter( r => hero.id === r.hero )
+
+      let data = {
+        hero: hero.name,
+        points: 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+      }
+
+      for (let hr of heroResults) {
+        data[hr.placement] += 1
+        switch (hr.placement) {
+          case '1':
+            data.points += 8
+            break
+          case '2':
+            data.points += 5
+            break
+          case '3':
+            data.points += 3
+            break
+          case '4':
+            data.points += 1
+            break
+          case '5':
+            data.points -= 1
+            break
+          case '6':
+            data.points -= 3
+            break
+          case '7':
+            data.points -= 5
+            break
+          case '8':
+            data.points -= 8
+            break
+          default:
+            data.points += 0
+            break
+        }
+      }
+
+      leaderboard.push(data)
+    }
+    return leaderboard
   }
 }
 
