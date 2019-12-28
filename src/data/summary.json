@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "titleLong": "Totally my fault. Meh.",
+        "titleLong": "Mistakes were made",
         "titleShort": "😪"
     },
     {
@@ -11,17 +11,17 @@
     },
     {
         "id": 3,
-        "titleLong": "It was ok and a reasonable result",
+        "titleLong": "Meh - It is what it is.",
         "titleShort": "😐"
     },
     {
         "id": 4,
-        "titleLong": "Thank you RNGesus! Love you!",
+        "titleLong": "RNGesus! Our Lord and Saviour.",
         "titleShort": "😀"
     },
     {
         "id": 5,
-        "titleLong": "Steamrolled them, Kripp - come at me!",
+        "titleLong": "I AM GOD. WHO IS NEXT?",
         "titleShort": "🤩"
     }
 ]
