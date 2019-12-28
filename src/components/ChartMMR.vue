@@ -24,7 +24,8 @@
     </b-row>
     <b-row>
       <b-col>
-        <ChartLine :chartData="lineChartData" :options="lineMmr.options" />
+        <ChartLine @canvas='canvas = $event' :chartData="lineChartData" :options="lineMmr.options" />
+        <DownloadChartButton filename="mmr" :canvas="canvas" />
       </b-col>
     </b-row>
   </div>
@@ -33,12 +34,14 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import ChartLine from '@/components/chart-blueprints/Line'
+import DownloadChartButton from '@/components/DownloadChartButton'
 
 export default {
   name: 'ChartMMR',
-  components: { ChartLine },
+  components: { ChartLine, DownloadChartButton },
   props: ['chartData', 'options'],
   data: () => ({
+    canvas: null,
     lineMaxItems: 25,
     showLabelsAtGraph: false,
     lineMmr: {

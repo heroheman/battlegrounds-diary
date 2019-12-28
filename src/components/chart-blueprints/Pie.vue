@@ -9,6 +9,7 @@ export default {
   mounted() {
     this.addPlugin(ChartJsPluginDataLabels);
     this.renderChart(this.chartData, this.options)
+    this.$emit('canvas', this.$refs.canvas)
   },
 }
 </script>

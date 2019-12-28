@@ -5,7 +5,8 @@
         <h3 class="h4 position-absolute">Games by Hero</h3>
         <b-tabs lazy align="right">
           <b-tab title="Pie">
-            <ChartDoughnut :chartData="pieChartData" :options="pieHeroes.options" />
+            <ChartDoughnut @canvas='canvas = $event' :chartData="pieChartData" :options="pieHeroes.options" />
+            <DownloadChartButton filename="heroes" :canvas="canvas" />
           </b-tab>
           <b-tab title="List">
             <b-table-lite :items="heroesChartDataTable"></b-table-lite>
@@ -19,12 +20,14 @@
 <script>
 import { mapGetters } from 'vuex'
 import ChartDoughnut from '@/components/chart-blueprints/Doughnut'
+import DownloadChartButton from '@/components/DownloadChartButton'
 import { getRandomColorArray } from '@/helper'
 
 export default {
   props: ['chartData', 'options'],
-  components: { ChartDoughnut },
+  components: { ChartDoughnut, DownloadChartButton },
   data: () => ({
+    canvas: null,
     pieHeroes: {
       options: {
         layout: {

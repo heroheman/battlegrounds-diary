@@ -3,7 +3,8 @@
     <b-row>
       <b-col>
         <h3 class="h4">Your Satisfaction</h3>
-        <ChartDoughnut :chartData="pieChartData" :options="pieHeroes.options" />
+        <ChartDoughnut @canvas='canvas = $event' :chartData="pieChartData" :options="pieSummary.options" />
+        <DownloadChartButton filename="summary" :canvas="canvas" />
       </b-col>
     </b-row>
   </div>
@@ -12,13 +13,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import ChartDoughnut from '@/components/chart-blueprints/Doughnut'
+import DownloadChartButton from '@/components/DownloadChartButton'
 import { getRandomColorArray } from '@/helper'
 
 export default {
   props: ['chartData', 'options'],
-  components: { ChartDoughnut },
+  components: { ChartDoughnut, DownloadChartButton },
   data: () => ({
-    pieHeroes: {
+    canvas: null,
+    pieSummary: {
       options: {
         layout: {
           padding: 30

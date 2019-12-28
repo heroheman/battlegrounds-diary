@@ -2,8 +2,8 @@
   <div class="leaderboard">
     <b-row>
       <b-col>
-        <h3 class="h4">Leaderboard</h3>
-        <b-tabs card lazy>
+        <h3 class="h4 position-absolute">Leaderboard</h3>
+        <b-tabs lazy align="right">
           <b-tab title="All">
             <b-table
               :fields="all.fields"
