@@ -209,6 +209,8 @@ const getters = {
       let data = {
         hero: hero.name,
         points: 0,
+        top1: 0,
+        top4: 0,
         "1": 0,
         "2": 0,
         "3": 0,
@@ -224,15 +226,20 @@ const getters = {
         switch (hr.placement) {
           case '1':
             data.points += 8
+            data.top1 +=1
+            data.top4 +=1
             break
           case '2':
             data.points += 5
+            data.top4 +=1
             break
           case '3':
             data.points += 3
+            data.top4 +=1
             break
           case '4':
             data.points += 1
+            data.top4 +=1
             break
           case '5':
             data.points -= 1
@@ -252,7 +259,18 @@ const getters = {
         }
       }
 
-      leaderboard.push(data)
+      if (
+        !(data[1] === 0 &&
+        data[2] === 0 &&
+        data[3] === 0 &&
+        data[4] === 0 &&
+        data[5] === 0 &&
+        data[6] === 0 &&
+        data[7] === 0 &&
+        data[8] === 0)
+      ) {
+        leaderboard.push(data)
+      }
     }
     return leaderboard
   }

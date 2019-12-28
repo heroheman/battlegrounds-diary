@@ -85,8 +85,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
-    sortBy: 'timestamp',
     sortDesc: true,
+    sortBy: 'timestamp',
     fields: [
       { key: 'hero', label: 'Hero' },
       { key: 'placement', label: 'Pos' },
