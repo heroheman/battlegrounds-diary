@@ -25,6 +25,11 @@
         "desc": "A deck type for people who like to live HAAARDCORE"
     },
     {
+        "id": 6,
+        "name": "Deathrattle",
+        "desc": "Bombs, Eggs, Baron Rivendare. What is dead may never die."
+    },
+    {
         "id": 5,
         "name": "Neutral / Other",
         "desc": "Who needs tribes anyway?"
