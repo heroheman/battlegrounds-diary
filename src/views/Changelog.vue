@@ -3,6 +3,16 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2019-12-28:</strong>
+        <ul>
+          <li>Add "Deathrattle" as tribe</li>
+          <li>Make Charts downloadable</li>
+          <li>Add Leaderboard (global, top1, top4)</li>
+          <li>You can delete now every history item, not just the last one.</li>
+          <li>Minor tweaks</li>
+        </ul>
+      </li>
+      <li>
         <strong>2019-12-26:</strong>
         <ul>
           <li>Reworked import export</li>
