@@ -22,7 +22,7 @@
 
       <template v-slot:cell(mmr)="data">
         {{data.item.mmr}}
-        <span v-if="data.item.missed !== 'true'" style="padding-left: 3px;">
+        <span v-if="data.item.missed !== 'true'" style="padding-left: 3px; padding-right: 3px;">
           <small v-if="data.item.difference > 0" class="text-success">+{{data.item.difference}}</small>
           <small v-else-if="data.item.difference === 0">{{data.item.difference}}</small>
           <small v-else class="text-danger">{{data.item.difference}}</small>
@@ -30,7 +30,9 @@
 
         <span>
           <small>
-            <unicon :name="getGainLoseIndicator(data.item.place, data.item.difference)" fill="#ccc" width="15" height="15" />
+            <unicon
+              :name="getGainLoseIndicator(data.item.place, data.item.difference)"
+              fill="#ccc" width="10" height="10" />
           </small>
         </span>
 
@@ -49,7 +51,6 @@
           </b-button>
 
           <b-button v-b-modal="`delete-modal-${row.item.id}`"
-            v-if="row.item.last"
             variant="danger" size="sm" title="Delete Entry" class="button--delete">
             <unicon name="trash" fill="white" width="15" height="15" />
           </b-button>
@@ -112,10 +113,12 @@ export default {
     },
     getGainLoseIndicator (place, diff) {
       const average = this.averageGainLose.find(a => a.place === parseInt(place)).average
-      if (diff > average) {
+      if (diff > (average + 1)) {
         return 'arrow-growth'
-      } else {
+      } else if(diff < (average - 1)) {
         return 'chart-down'
+      } else {
+        return 'circle'
       }
     }
   }
