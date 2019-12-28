@@ -6,6 +6,7 @@
         <b-tabs lazy align="right">
           <b-tab title="All">
             <b-table
+              responsive
               :fields="all.fields"
               :sort-by.sync="all.sortBy"
               :sort-desc.sync="all.sortDesc"
@@ -14,6 +15,7 @@
           </b-tab>
           <b-tab title="Top 1">
             <b-table
+              responsive
               :fields="top1.fields"
               :sort-by.sync="top1.sortBy"
               :sort-desc.sync="top1.sortDesc"
@@ -22,6 +24,7 @@
           </b-tab>
           <b-tab title="Top 4">
             <b-table
+              responsive
               :fields="top4.fields"
               :sort-by.sync="top4.sortBy"
               :sort-desc.sync="top4.sortDesc"
