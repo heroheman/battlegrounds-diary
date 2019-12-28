@@ -81,9 +81,9 @@
             unchecked-value=false
             switch
             >
-            Only set MMR
+            Unlink from previous tracked games.
           </b-form-checkbox>
-          <b-form-text class="mb-3">If you have not tracked some games since the last time</b-form-text>
+          <b-form-text class="mb-3">No point difference. Useful if you have not tracked some games</b-form-text>
         </b-col>
         <b-col class="text-right">
           <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
