@@ -223,38 +223,22 @@ const getters = {
 
       for (let hr of heroResults) {
         data[hr.placement] += 1
+        data.points += parseInt(hr.difference)
         switch (hr.placement) {
           case '1':
-            data.points += 8
             data.top1 +=1
             data.top4 +=1
             break
           case '2':
-            data.points += 5
             data.top4 +=1
             break
           case '3':
-            data.points += 3
             data.top4 +=1
             break
           case '4':
-            data.points += 1
             data.top4 +=1
             break
-          case '5':
-            data.points -= 1
-            break
-          case '6':
-            data.points -= 3
-            break
-          case '7':
-            data.points -= 5
-            break
-          case '8':
-            data.points -= 8
-            break
           default:
-            data.points += 0
             break
         }
       }

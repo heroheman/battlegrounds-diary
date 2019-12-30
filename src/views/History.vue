@@ -19,9 +19,17 @@
         <b-card no-body>
           <b-tabs card lazy>
             <b-tab title="Your Journey">
+              <template v-slot:title>
+                <unicon class="tab-icon" name="list-ul" fill="currentColor" width="18" height="18" />
+                Your Journey
+              </template>
               <TableResults />
             </b-tab>
             <b-tab title="Graphs (Experimental)">
+              <template v-slot:title>
+                <unicon class="tab-icon" name="chart-pie-alt" fill="currentColor" width="18" height="18" />
+                Stats and Graphs
+              </template>
               <ChartResults />
             </b-tab>
           </b-tabs>
@@ -64,3 +72,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.tab-icon {
+  position: relative;
+  top: -2px;
+}
+</style>

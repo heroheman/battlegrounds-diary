@@ -15,16 +15,16 @@
         </b-col>
       </b-row>
       <b-row>
+        <b-col>
+          <TableLeaderboard class="mb-5" />
+        </b-col>
+      </b-row>
+      <b-row>
         <b-col sm="12" md="6" class="mb-5">
           <ChartSummary />
         </b-col>
         <b-col sm="12" md="6" class="mb-5">
           <ChartGainsLose />
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <TableLeaderboard class="mb-5" />
         </b-col>
       </b-row>
     </div>
