@@ -61,7 +61,7 @@
             class="mb-3"
             v-model="result.note"
             size="sm"
-            placeholder="Optional match notes e.g. Could not find Rock Hunter"
+            placeholder="Optional match notes e.g. 'Could not find Rock Hunter'"
             rows="2"
             max-rows="6"
           />
@@ -73,7 +73,7 @@
       </b-row>
 
       <b-row class="mb-4">
-        <b-col>
+        <b-col sm="12" md="6">
           <b-form-checkbox
             v-model="result.missed"
             name="checkbox-1"
@@ -85,7 +85,7 @@
           </b-form-checkbox>
           <b-form-text class="mb-3">No point difference. Useful if you have not tracked some games</b-form-text>
         </b-col>
-        <b-col class="text-right">
+        <b-col class="text-right" sm="12" md="6">
           <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
           <b-button type="reset" variant="danger">Reset</b-button>
         </b-col>
