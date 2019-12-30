@@ -3,6 +3,10 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2019-12-30:</strong>
+        Minor Tweaks and Fixes
+      </li>
+      <li>
         <strong>2019-12-28:</strong>
         <ul>
           <li>Add "Deathrattle" as tribe</li>
@@ -46,7 +50,7 @@
 
     <h3 class="mt-5">Roadmap</h3>
     <ul>
-      <li><strong>Import / Export of data</strong></li>
+      <li><strike>Import / Export of data</strike></li>
       <li>More Charts and Stats</li>
       <li>Settings: Delete Data</li>
       <li>Better UI</li>
