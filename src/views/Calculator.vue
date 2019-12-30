@@ -1,6 +1,20 @@
 <template>
   <div>
     <b-row>
+      <b-col>
+        <b-alert show variant="info">
+          <h4>What is this?</h4>
+          <p>The "Full Stats" in Battlegrounds are missing one Key Feature: <strong>Total Games Played</strong>. This is an attempt to get this number - and some more.</p>
+          <p>The calculation is based on the number of <em>Tavern Upgrades</em>. Most of the time, a player reaches level 4 or 5 before he wins or gets eliminated.
+            Depending on your own estimation you can also adjust the base value.</p>
+          <p>
+            <label for="atu"><strong>Average Tavern Upgrades</strong></label>
+            <b-input id="atu" v-model="averageTavernUpgrades"></b-input>
+          </p>
+        </b-alert>
+      </b-col>
+    </b-row>
+    <b-row>
       <b-col sm="12" md="6" class="mb-4">
         <b-card title="Add your data" tag="section">
           <b-form>
@@ -141,32 +155,36 @@
 
       <b-col sm="12" md="6" class="mb-4">
         <b-card class="mb-3" header="Results" tag="section" header-bg-variant="default">
-          <dl>
-            <dt>Games Played: </dt>
-            <dd>{{ amount }} Games</dd>
+          <div v-if="upgrades !== ''">
+            <dl>
+              <dt>Games Played: </dt>
+              <dd>{{ amount }} Games</dd>
 
-            <dt>Average Wins:</dt>
-            <dd>{{ winsOne }}%</dd>
+              <dt>Average Wins:</dt>
+              <dd>{{ winsOne }}%</dd>
 
-            <dt>Average Top4:</dt>
-            <dd>{{ winsFour }}%</dd>
-          </dl>
+              <dt>Average Top4:</dt>
+              <dd>{{ winsFour }}%</dd>
+            </dl>
 
-          <hr>
+            <hr>
 
-          <dl>
-            <dt>Average Minions destroyed:</dt>
-            <dd>{{ killedMinions }} per Match</dd>
+            <dl>
+              <dt>Average Minions destroyed:</dt>
+              <dd>{{ killedMinions }} per Match</dd>
 
-            <dt>Average Players destroyed</dt>
-            <dd>{{ killedPlayers }} per Match</dd>
+              <dt>Average Players destroyed</dt>
+              <dd>{{ killedPlayers }} per Match</dd>
 
-            <dt>Average triples</dt>
-            <dd>{{ triples }} per Match</dd>
+              <dt>Average triples</dt>
+              <dd>{{ triples }} per Match</dd>
 
-            <dt>Average time / Match</dt>
-            <dd>{{ time }} Minutes</dd>
-          </dl>
+              <dt>Average time / Match</dt>
+              <dd>{{ time }} Minutes</dd>
+            </dl>
+          </div>
+
+          <div v-else>No Data</div>
         </b-card>
       </b-col>
     </b-row>
@@ -180,11 +198,9 @@ import { mapFields } from 'vuex-map-fields'
 export default {
   name: "Calculator",
   components: { Popover },
-  data: () => ({
-    averageTavernUpgrades: 4.5
-  }),
   computed: {
     ...mapFields('calculator', [
+      'averageTavernUpgrades',
       'top4',
       'first',
       'upgrades',
