@@ -13,11 +13,11 @@
     <p>But I will keep an eye on my page stats and maybe I will add this.</p>
 
     <h3 class="mt-5">Can I import and export my data?</h3>
-    <p>Right now: <strong>Sadly no</strong></p>
-    <p>But its one of the features I will add with high priority.</p>
+    <p>Yes:<strong>Sadly no</strong></p>
+    <p>Open the Settings Page and you can import / export your data. There is also some kind of backupsystem in case something goes wrong.</p>
 
     <h3 class="mt-5">Is there an app?</h3>
-    <p>No. And not planned. But if you are using the Chrome Browser on Android you can add any page to your Homescreen and it will look like an app. An app with crappy Bootstrap Default Design.</p>
+    <p>No. And not planned. But if you are using the Chrome Browser on Android you can add any page to your Homescreen and it will look like an app.</p>
 
     <h3 class="mt-5">Dude... your english... it's horrible!</h3>
     <p>Yes. It is. And not my native language. Also I edit a lot on mobile devices and Autocomplete and me are mortal enemies. But feel free to write me an e-mail with corrections and feedback. Or create a Pull Request on Github.</p>
