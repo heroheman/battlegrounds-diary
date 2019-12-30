@@ -1,7 +1,7 @@
 <template>
   <div class="text-right">
-    <b-button variant="link" @click="downloadAsImage()" size="sm">
-      <unicon name="image-download" fill="#000" width="10" height="10"></unicon>
+    <b-button variant="outline-info" @click="downloadAsImage()" size="sm">
+      <unicon class="download-icon" name="image-download" fill="currentColor" width="13" height="13"></unicon>
 
       Download as PNG
     </b-button>
@@ -26,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.download-icon {
+  position: relative;
+  top: -2px;
+}
+</style>
