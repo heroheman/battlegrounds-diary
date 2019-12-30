@@ -67,6 +67,7 @@ const actions = {
       commit('SET_BACKUP_RESULTS')
     }
     commit('SET_IMPORTED_RESULTS', payload)
+    commit('SET_MMR', [...state.results].pop().mmr)
   }
 }
 

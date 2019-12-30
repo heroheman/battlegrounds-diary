@@ -147,9 +147,12 @@ export default {
     submitResult(e) {
       e.preventDefault();
       this.result.timestamp = new Date()
+      console.log(this.result.missed, this.results.length)
       if (this.result.missed === 'true' || !this.results.length) {
+        console.log('set to 0')
         this.result.difference = 0
       } else {
+        console.log('dif', this.result.mmr, this.mmr, this.result.difference)
         this.result.difference = this.result.mmr - this.mmr
       }
       let temp = {...this.result}
