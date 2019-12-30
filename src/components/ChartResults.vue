@@ -27,12 +27,6 @@
           <TableLeaderboard class="mb-5" />
         </b-col>
       </b-row>
-      <b-alert show>
-        <small>
-          <strong>Note for Desktop User:</strong>
-          Right-click on chart to save as image
-        </small>
-      </b-alert>
     </div>
   </div>
 </template>
