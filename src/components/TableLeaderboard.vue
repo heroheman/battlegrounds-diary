@@ -13,23 +13,32 @@
               :items="leaderboard">
             </b-table>
           </b-tab>
-          <b-tab title="Top 1">
-            <b-table
-              responsive
-              :fields="top1.fields"
-              :sort-by.sync="top1.sortBy"
-              :sort-desc.sync="top1.sortDesc"
-              :items="leaderboard">
-            </b-table>
-          </b-tab>
-          <b-tab title="Top 4">
-            <b-table
-              responsive
-              :fields="top4.fields"
-              :sort-by.sync="top4.sortBy"
-              :sort-desc.sync="top4.sortDesc"
-              :items="leaderboard">
-            </b-table>
+          <b-tab title="Top 1 / Top 4">
+            <b-row class="mt-3">
+              <b-col sm="12" md="4">
+                <b-card header="Top 1">
+                  <b-table
+                    responsive
+                    :fields="top1.fields"
+                    :sort-by.sync="top1.sortBy"
+                    :sort-desc.sync="top1.sortDesc"
+                    :items="leaderboard">
+                  </b-table>
+                </b-card>
+              </b-col>
+
+              <b-col sm="12" md="8">
+                <b-card header="Top 4">
+                <b-table
+                  responsive
+                  :fields="top4.fields"
+                  :sort-by.sync="top4.sortBy"
+                  :sort-desc.sync="top4.sortDesc"
+                  :items="leaderboard">
+                </b-table>
+                </b-card>
+              </b-col>
+            </b-row>
           </b-tab>
         </b-tabs>
       </b-col>
