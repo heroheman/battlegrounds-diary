@@ -4,10 +4,13 @@
       <b-row>
         <b-col sm="12" md="4" class="mb-4">
           <!-- HERO SELECTION -->
-          <b-form-select required v-model="result.hero" :options="heroOptions">
+          <b-form-select required v-model="result.hero">
             <template v-slot:first>
               <option :value="null" disabled>-- Please select a hero --</option>
             </template>
+            <option v-for="(h,index) in heroOptions" :key="index" :value="h.value" :class="h.class">
+              {{ h.text }}
+            </option>
           </b-form-select>
         </b-col>
 
@@ -116,12 +119,25 @@ export default {
       'heroes', 'tribes', 'summary', 'mmr', 'results'
     ]),
     heroOptions () {
-      return this.heroes.filter(h => h.active === true).map( hero => {
+      let heroes = []
+      let active = this.heroes.filter(h => h.active === true).map( hero => {
         let newObj = {}
         newObj['value'] = hero.id
-        newObj['text'] = hero.name
+        newObj['text'] = `${hero.name}`
+        newObj['class'] = ''
         return newObj
       })
+      let inactive = this.heroes.filter(h => h.active === false).map( hero => {
+        let newObj = {}
+        newObj['value'] = hero.id
+        newObj['text'] = `${hero.name} - retired`
+        newObj['class'] = 'text-cursive'
+        return newObj
+      })
+
+      heroes = [...active, ...inactive]
+
+      return heroes
     },
     tribeOptions () {
       return this.tribes.map( tribe => {
@@ -181,3 +197,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.text-cursive {
+  font-weight: italic;
+}
+</style>
