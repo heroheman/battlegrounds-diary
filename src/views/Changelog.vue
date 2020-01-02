@@ -3,6 +3,10 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-02:</strong>
+        All heroes are now selectable. Even the retired one, in case you want to add old data.
+      </li>
+      <li>
         <strong>2019-12-30:</strong>
         Minor Tweaks and Fixes
       </li>
