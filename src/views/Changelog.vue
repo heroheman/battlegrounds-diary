@@ -55,11 +55,13 @@
     <h3 class="mt-5">Roadmap</h3>
     <ul>
       <li><strike>Import / Export of data</strike></li>
+      <li>PWA / Offline Support</li>
       <li>More Charts and Stats</li>
       <li>Settings: Delete Data</li>
       <li>Better UI</li>
-      <li>Mobile optimization</li>
-      <li>Performance optimization</li>
+      <li>Optimization: Mobile</li>
+      <li>Optimization: Performance</li>
+      <li>...</li>
       <li>Database and Login/User Profiles</li>
     </ul>
   </div>
