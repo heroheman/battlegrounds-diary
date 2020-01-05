@@ -3,6 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-05:</strong>
+        <ul>
+          <li>Add Pagination to matchlist</li>
+          <li>Add Filter to matchlist</li>
+          <li>Filter by hero or tribe by typing or click</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-02:</strong>
         All heroes are now selectable. Even the retired one, in case you want to add old data.
       </li>
