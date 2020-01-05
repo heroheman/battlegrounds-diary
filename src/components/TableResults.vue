@@ -6,7 +6,7 @@
           <b-pagination
             v-model="currentPage"
             size="sm"
-            :total-rows="resultsTableData.length"
+            :total-rows="totalRows"
             :per-page="perPage"
             aria-controls="my-table"
             >
@@ -14,11 +14,16 @@
         </b-col>
 
         <b-col>
-          <b-form-select v-model="perPage">
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
+          <b-form-input size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
+          </b-form-input>
+        </b-col>
+
+        <b-col>
+          <b-form-select v-model="perPage" size="sm">
+            <option value="10">10 per page</option>
+            <option value="25">25 per page</option>
+            <option value="50">50 per page</option>
+            <option value="100">100 per page</option>
           </b-form-select>
         </b-col>
       </b-row>
@@ -27,12 +32,14 @@
     <b-table
       responsive
       small
+      :filter="filter"
       :fields="fields"
       :items="resultsTableData"
       :per-page="perPage"
       :current-page="currentPage"
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
+      @filtered="onFiltered"
       >
 
       <template v-slot:table-colgroup="scope">
@@ -114,6 +121,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
+    filter: '',
+    totalRows: '1',
     perPage: 25,
     currentPage: 1,
     sortDesc: true,
@@ -134,6 +143,10 @@ export default {
       'averageGainLose'
     ])
   },
+  mounted() {
+    // Set the initial number of items
+    this.totalRows = this.resultsTableData.length
+  },
   methods: {
     ...mapActions('history', [
       'deleteResult'
@@ -150,6 +163,11 @@ export default {
       } else {
         return 'circle'
       }
+    },
+    onFiltered(filteredItems) {
+      // Trigger pagination to update the number of buttons/pages due to filtering
+      this.totalRows = filteredItems.length
+      this.currentPage = 1
     }
   }
 }
