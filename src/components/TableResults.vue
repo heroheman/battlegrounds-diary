@@ -57,7 +57,7 @@
       </template>
 
       <template v-slot:cell(hero)="data">
-        <b class="text-info" @click="filter = data.value">{{ data.value }}</b>
+        <b class="text-dark text-dotted" @click="filter = data.value">{{ data.value }}</b>
       </template>
 
       <template v-slot:cell(mmr)="data">
@@ -76,6 +76,10 @@
           </small>
         </span>
 
+      </template>
+
+      <template v-slot:cell(tribe)="data">
+        <b class="text-dark text-dotted" @click="filter = data.value">{{ data.value }}</b>
       </template>
 
       <template v-slot:cell(timestamp)="data">
@@ -205,5 +209,9 @@ colgroup .actions { width: 100px; }
   position: absolute;
   right: 1rem;
   top: 0;
+}
+
+.text-dotted {
+  border-bottom: 1px dotted #ccc;
 }
 </style>
