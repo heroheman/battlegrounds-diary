@@ -4,6 +4,8 @@
       responsive
       :fields="fields"
       :items="resultsTableData"
+      :per-page="perPage"
+      :current-page="currentPage"
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
       >
@@ -78,6 +80,16 @@
       </template>
     </b-table>
 
+    <b-pagination
+      v-model="currentPage"
+      size="sm"
+      :total-rows="resultsTableData.length"
+      :per-page="perPage"
+      aria-controls="my-table"
+      >
+    </b-pagination>
+
+
   </div>
 </template>
 
@@ -86,6 +98,8 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
+    perPage: 20,
+    currentPage: 1,
     sortDesc: true,
     sortBy: 'timestamp',
     fields: [
