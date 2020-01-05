@@ -1,14 +1,27 @@
 <template>
   <div>
     <div class="actions">
-      <b-pagination
-        v-model="currentPage"
-        size="sm"
-        :total-rows="resultsTableData.length"
-        :per-page="perPage"
-        aria-controls="my-table"
-        >
-      </b-pagination>
+      <b-row>
+        <b-col>
+          <b-pagination
+            v-model="currentPage"
+            size="sm"
+            :total-rows="resultsTableData.length"
+            :per-page="perPage"
+            aria-controls="my-table"
+            >
+          </b-pagination>
+        </b-col>
+
+        <b-col>
+          <b-form-select v-model="perPage">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </b-form-select>
+        </b-col>
+      </b-row>
     </div>
 
     <b-table
@@ -101,7 +114,7 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: "TableResults",
   data: () => ({
-    perPage: 20,
+    perPage: 25,
     currentPage: 1,
     sortDesc: true,
     sortBy: 'timestamp',
