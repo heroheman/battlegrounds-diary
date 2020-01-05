@@ -21,6 +21,8 @@ import {
   uniChartBar, uniImageDownload, uniCircle, uniListUl
 } from 'vue-unicons/src/icons'
 
+import './registerServiceWorker'
+
 Unicon.add([
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,
   uniArrowGrowth, uniChartDown, uniCog, uniChartPieAlt,
