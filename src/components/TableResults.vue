@@ -1,7 +1,19 @@
 <template>
   <div>
+    <div class="actions">
+      <b-pagination
+        v-model="currentPage"
+        size="sm"
+        :total-rows="resultsTableData.length"
+        :per-page="perPage"
+        aria-controls="my-table"
+        >
+      </b-pagination>
+    </div>
+
     <b-table
       responsive
+      small
       :fields="fields"
       :items="resultsTableData"
       :per-page="perPage"
@@ -79,15 +91,6 @@
         </b-card>
       </template>
     </b-table>
-
-    <b-pagination
-      v-model="currentPage"
-      size="sm"
-      :total-rows="resultsTableData.length"
-      :per-page="perPage"
-      aria-controls="my-table"
-      >
-    </b-pagination>
 
 
   </div>
