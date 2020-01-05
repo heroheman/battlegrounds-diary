@@ -13,9 +13,15 @@
           </b-pagination>
         </b-col>
 
-        <b-col>
-          <b-form-input size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
+        <b-col class="filter">
+          <b-form-input class="filter__input" size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
           </b-form-input>
+          <b-button v-if="filter !== ''"  title="Reset Filter"
+            variant="link" size="sm" class="filter__reset" @click="filter = ''">
+            <unicon
+              name="times"
+              fill="red" width="15" height="15" />
+          </b-button>
         </b-col>
 
         <b-col>
@@ -51,7 +57,7 @@
       </template>
 
       <template v-slot:cell(hero)="data">
-        <b class="text-info">{{ data.value }}</b>
+        <b class="text-info" @click="filter = data.value">{{ data.value }}</b>
       </template>
 
       <template v-slot:cell(mmr)="data">
@@ -190,5 +196,14 @@ colgroup .actions { width: 100px; }
 .button--delete {
   padding: 0.15rem 0.5rem;
   margin-right: 2px;
+}
+
+.filter {
+  position: relative;
+}
+.filter__reset {
+  position: absolute;
+  right: 1rem;
+  top: 0;
 }
 </style>
