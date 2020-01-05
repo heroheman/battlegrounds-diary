@@ -2,18 +2,7 @@
   <div>
     <div class="actions">
       <b-row>
-        <b-col>
-          <b-pagination
-            v-model="currentPage"
-            size="sm"
-            :total-rows="totalRows"
-            :per-page="perPage"
-            aria-controls="my-table"
-            >
-          </b-pagination>
-        </b-col>
-
-        <b-col class="filter">
+        <b-col sm="12" md="4" class="filter mb-2">
           <b-form-input class="filter__input" size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
           </b-form-input>
           <b-button v-if="filter !== ''"  title="Reset Filter"
@@ -24,7 +13,7 @@
           </b-button>
         </b-col>
 
-        <b-col>
+        <b-col sm="12" md="4" class="mb-2">
           <b-form-select v-model="perPage" size="sm">
             <option value="10">10 per page</option>
             <option value="25">25 per page</option>
@@ -32,6 +21,18 @@
             <option value="100">100 per page</option>
           </b-form-select>
         </b-col>
+
+        <b-col sm="12" md="4" class="">
+          <b-pagination
+            v-model="currentPage"
+            size="sm"
+            :total-rows="totalRows"
+            :per-page="perPage"
+            aria-controls="my-table"
+            >
+          </b-pagination>
+        </b-col>
+
       </b-row>
     </div>
 
