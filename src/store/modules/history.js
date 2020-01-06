@@ -262,10 +262,10 @@ const getters = {
   leaderboardTribes: state => {
     const leaderboard = []
     for (const tribe of state.tribes) {
-      let tribeResults = state.results.filter( r => tribe.id === r.hero )
+      let tribeResults = state.results.filter( r => tribe.id === r.tribe )
 
       let data = {
-        hero: tribe.name,
+        tribe: tribe.name,
         points: 0,
         top1: 0,
         top4: 0,

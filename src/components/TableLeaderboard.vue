@@ -12,9 +12,9 @@
               <b-table
                 responsive
                 small
-                :fields="all.fields"
-                :sort-by.sync="all.sortBy"
-                :sort-desc.sync="all.sortDesc"
+                :fields="heroes.all.fields"
+                :sort-by.sync="heroes.all.sortBy"
+                :sort-desc.sync="heroes.all.sortDesc"
                 :items="leaderboardHeroes">
               </b-table>
             </b-card>
@@ -30,9 +30,9 @@
                   <b-table
                     responsive
                     small
-                    :fields="top1.fields"
-                    :sort-by.sync="top1.sortBy"
-                    :sort-desc.sync="top1.sortDesc"
+                    :fields="heroes.top1.fields"
+                    :sort-by.sync="heroes.top1.sortBy"
+                    :sort-desc.sync="heroes.top1.sortDesc"
                     :items="leaderboardHeroes">
                   </b-table>
                 </b-card>
@@ -43,9 +43,9 @@
                   <b-table
                     responsive
                     small
-                    :fields="top4.fields"
-                    :sort-by.sync="top4.sortBy"
-                    :sort-desc.sync="top4.sortDesc"
+                    :fields="heroes.top4.fields"
+                    :sort-by.sync="heroes.top4.sortBy"
+                    :sort-desc.sync="heroes.top4.sortDesc"
                     :items="leaderboardHeroes">
                   </b-table>
                 </b-card>
@@ -61,9 +61,9 @@
               <b-table
                 responsive
                 small
-                :fields="all.fields"
-                :sort-by.sync="all.sortBy"
-                :sort-desc.sync="all.sortDesc"
+                :fields="tribes.all.fields"
+                :sort-by.sync="tribes.all.sortBy"
+                :sort-desc.sync="tribes.all.sortDesc"
                 :items="leaderboardTribes">
               </b-table>
             </b-card>
@@ -79,9 +79,9 @@
                   <b-table
                     responsive
                     small
-                    :fields="top1.fields"
-                    :sort-by.sync="top1.sortBy"
-                    :sort-desc.sync="top1.sortDesc"
+                    :fields="tribes.top1.fields"
+                    :sort-by.sync="tribes.top1.sortBy"
+                    :sort-desc.sync="tribes.top1.sortDesc"
                     :items="leaderboardTribes">
                   </b-table>
                 </b-card>
@@ -92,9 +92,9 @@
                   <b-table
                     responsive
                     small
-                    :fields="top4.fields"
-                    :sort-by.sync="top4.sortBy"
-                    :sort-desc.sync="top4.sortDesc"
+                    :fields="tribes.top4.fields"
+                    :sort-by.sync="tribes.top4.sortBy"
+                    :sort-desc.sync="tribes.top4.sortDesc"
                     :items="leaderboardTribes">
                   </b-table>
                 </b-card>
@@ -113,41 +113,81 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'TableLeaderboard',
   data: () => ({
-    all: {
-      sortBy: 'points',
-      sortDesc: true,
-      fields: [
-        { key: '1', label: '1' },
-        { key: '2', label: '2' },
-        { key: '3', label: '3' },
-        { key: '4', label: '4' },
-        { key: '5', label: '5' },
-        { key: '6', label: '6' },
-        { key: '7', label: '7' },
-        { key: '8', label: '8' },
-        { key: 'hero', label: 'Hero' },
-        { key: 'points', label: 'Points', sortable: true },
-      ]
+    heroes: {
+      all: {
+        sortBy: 'points',
+        sortDesc: true,
+        fields: [
+          { key: '1', label: '1' },
+          { key: '2', label: '2' },
+          { key: '3', label: '3' },
+          { key: '4', label: '4' },
+          { key: '5', label: '5' },
+          { key: '6', label: '6' },
+          { key: '7', label: '7' },
+          { key: '8', label: '8' },
+          { key: 'hero', label: 'Hero' },
+          { key: 'points', label: 'Points', sortable: true },
+        ]
+      },
+      top1: {
+        sortBy: 'top1',
+        sortDesc: true,
+        fields: [
+          { key: 'top1', label: 'Top 1', sortable: true },
+          { key: 'hero', label: 'Hero' },
+        ]
+      },
+      top4: {
+        sortBy: 'top4',
+        sortDesc: true,
+        fields: [
+          { key: 'top4', label: 'Top 4', sortable: true },
+          { key: 'hero', label: 'Hero' },
+          { key: '1', label: '1' },
+          { key: '2', label: '2' },
+          { key: '3', label: '3' },
+          { key: '4', label: '4' },
+        ]
+      }
     },
-    top1: {
-      sortBy: 'top1',
-      sortDesc: true,
-      fields: [
-        { key: 'top1', label: 'Top 1', sortable: true },
-        { key: 'hero', label: 'Hero' },
-      ]
-    },
-    top4: {
-      sortBy: 'top4',
-      sortDesc: true,
-      fields: [
-        { key: 'top4', label: 'Top 4', sortable: true },
-        { key: 'hero', label: 'Hero' },
-        { key: '1', label: '1' },
-        { key: '2', label: '2' },
-        { key: '3', label: '3' },
-        { key: '4', label: '4' },
-      ]
+    tribes: {
+      all: {
+        sortBy: 'points',
+        sortDesc: true,
+        fields: [
+          { key: '1', label: '1' },
+          { key: '2', label: '2' },
+          { key: '3', label: '3' },
+          { key: '4', label: '4' },
+          { key: '5', label: '5' },
+          { key: '6', label: '6' },
+          { key: '7', label: '7' },
+          { key: '8', label: '8' },
+          { key: 'tribe', label: 'Tribe' },
+          { key: 'points', label: 'Points', sortable: true },
+        ]
+      },
+      top1: {
+        sortBy: 'top1',
+        sortDesc: true,
+        fields: [
+          { key: 'top1', label: 'Top 1', sortable: true },
+          { key: 'tribe', label: 'Tribes' },
+        ]
+      },
+      top4: {
+        sortBy: 'top4',
+        sortDesc: true,
+        fields: [
+          { key: 'top4', label: 'Top 4', sortable: true },
+          { key: 'tribe', label: 'Tribes' },
+          { key: '1', label: '1' },
+          { key: '2', label: '2' },
+          { key: '3', label: '3' },
+          { key: '4', label: '4' },
+        ]
+      }
     }
   }),
   computed: {
