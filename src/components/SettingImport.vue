@@ -60,8 +60,10 @@ export default {
     },
     handleImportData() {
       this.setImportedResults(this.importData)
-      this.importData = ''
-      this.toast(true)
+        .then(() => {
+          this.importData = ''
+          this.toast(true)
+        })
     },
     handleFileData(data) {
       this.importData = data

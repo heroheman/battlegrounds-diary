@@ -49,8 +49,11 @@ const mutations = {
 
 const actions = {
   addResult ({ commit }, data) {
-    data.id = uuidv4()
-    commit('ADD_RESULT', data)
+    return new Promise(async (resolve, reject) => {
+      data.id = uuidv4()
+      commit('ADD_RESULT', data)
+      resolve(true)
+    })
   },
   setMmr ({ commit }, data) {
     commit('SET_MMR', data)
@@ -62,12 +65,15 @@ const actions = {
     commit('UPDATE_RESULT', data)
   },
   setImportedResults ({ commit, state }, data) {
-    const payload = decodeDiaryData(data)
-    if (state.results.length > 0) {
-      commit('SET_BACKUP_RESULTS')
-    }
-    commit('SET_IMPORTED_RESULTS', payload)
-    commit('SET_MMR', [...state.results].pop().mmr)
+    return new Promise(async (resolve, reject) => {
+      const payload = decodeDiaryData(data)
+      if (state.results.length > 0) {
+        commit('SET_BACKUP_RESULTS')
+      }
+      commit('SET_IMPORTED_RESULTS', payload)
+      commit('SET_MMR', [...state.results].pop().mmr)
+      resolve(true)
+    })
   }
 }
 

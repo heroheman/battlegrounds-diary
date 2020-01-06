@@ -170,12 +170,13 @@ export default {
       }
       let temp = {...this.result}
       this.addResult(temp)
-
-      this.$nextTick(() => {
-        this.setMmr(this.result.mmr)
-        this.resetForm()
-      });
-      this.toast(true)
+        .then(() => {
+          this.setMmr(this.result.mmr)
+          this.resetForm()
+        })
+        .then(() => {
+          this.toast(true)
+        })
     },
     handleReset(e) {
       e.preventDefault()
