@@ -175,6 +175,7 @@ export default {
         this.setMmr(this.result.mmr)
         this.resetForm()
       });
+      this.toast('b-toaster-bottom-center', true)
     },
     handleReset(e) {
       e.preventDefault()
@@ -190,6 +191,15 @@ export default {
       this.result.missed = null
       this.result.timestamp = null
       this.result.difference = null
+    },
+    toast(toaster, append = false) {
+      this.counter++
+      this.$bvToast.toast('Result added', {
+        toaster: 'b-toaster-bottom-center',
+        solid: true,
+        variant:'primary',
+        appendToast: append
+      })
     }
   }
 }
