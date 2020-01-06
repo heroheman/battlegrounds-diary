@@ -129,7 +129,7 @@ const getters = {
       if (games > 0) {
         heroesTable.push({
           hero: res.name,
-          gamesPlayed: games
+          games: games
         })
       }
     }
@@ -159,7 +159,7 @@ const getters = {
       if (games > 0) {
         arr.push({
           tribe: res.name,
-          gamesPlayed: games
+          games: games
         })
       }
     }

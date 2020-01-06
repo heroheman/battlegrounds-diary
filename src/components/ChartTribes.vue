@@ -15,7 +15,7 @@
             <template v-slot:title>
               <unicon class="tab-icon" name="list-ul" fill="currentColor" width="18" height="18" />
             </template>
-            <b-table-lite :items="tribeChartDataTable"></b-table-lite>
+            <b-table-lite small :items="tribeChartDataTable"></b-table-lite>
           </b-tab>
         </b-tabs>
       </b-col>
