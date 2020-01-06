@@ -197,7 +197,7 @@ export default {
       this.$bvToast.toast('Result added', {
         toaster: 'b-toaster-bottom-center',
         solid: true,
-        variant:'primary',
+        variant:'success',
         appendToast: append
       })
     }
