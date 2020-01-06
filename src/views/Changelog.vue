@@ -3,6 +3,13 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-06:</strong>
+        <ul>
+          <li>Add tribe leaderboard</li>
+          <li>UI Improvements</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-05:</strong>
         <ul>
           <li>Add Pagination to matchlist</li>
