@@ -3,7 +3,9 @@
     <div class="actions">
       <b-row>
         <b-col sm="12" md="4" class="filter mb-2">
-          <b-form-input class="filter__input" size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
+          <b-form-input class="filter__input"
+                        :class="{ active : filter !== '' }"
+            size="sm" v-model="filter" placeholder="Filter by Hero/Tribe">
           </b-form-input>
           <b-button v-if="filter !== ''"  title="Reset Filter"
             variant="link" size="sm" class="filter__reset" @click="filter = ''">
@@ -207,6 +209,9 @@ colgroup .actions { width: 100px; }
 .filter {
   position: relative;
 }
+.filter__input.active {
+  border: 2px solid orange;
+}
 .filter__reset {
   position: absolute;
   right: 1rem;
@@ -216,4 +221,5 @@ colgroup .actions { width: 100px; }
 .text-dotted {
   border-bottom: 1px dotted #ccc;
 }
+
 </style>
