@@ -32,6 +32,16 @@ export default {
       var blob = new Blob([exportCode], {type: 'text/plain'})
       link.href = window.URL.createObjectURL(blob)
       link.click()
+      this.toast(true)
+    },
+    toast(append = false) {
+      this.counter++
+      this.$bvToast.toast('Export successful', {
+        toaster: 'b-toaster-bottom-center',
+        solid: true,
+        variant:'success',
+        appendToast: append
+      })
     }
   }
 }

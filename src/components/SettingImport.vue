@@ -61,9 +61,19 @@ export default {
     handleImportData() {
       this.setImportedResults(this.importData)
       this.importData = ''
+      this.toast(true)
     },
     handleFileData(data) {
       this.importData = data
+    },
+    toast(append = false) {
+      this.counter++
+      this.$bvToast.toast('Import successful', {
+        toaster: 'b-toaster-bottom-center',
+        solid: true,
+        variant:'success',
+        appendToast: append
+      })
     }
   }
 }
