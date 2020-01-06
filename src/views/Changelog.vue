@@ -6,6 +6,7 @@
         <strong>2020-01-06:</strong>
         <ul>
           <li>Add tribe leaderboard</li>
+          <li>Button feedback</li>
           <li>UI Improvements</li>
         </ul>
       </li>
