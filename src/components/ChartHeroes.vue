@@ -5,10 +5,16 @@
         <h3 class="h4 position-absolute">Games by Hero</h3>
         <b-tabs lazy align="right">
           <b-tab title="Pie">
+            <template v-slot:title>
+              <unicon class="tab-icon" name="chart-pie-alt" fill="currentColor" width="18" height="18" />
+            </template>
             <ChartDoughnut @canvas='canvas = $event' :chartData="pieChartData" :options="pieHeroes.options" />
             <DownloadChartButton filename="heroes" :canvas="canvas" />
           </b-tab>
           <b-tab title="List">
+            <template v-slot:title>
+              <unicon class="tab-icon" name="list-ul" fill="currentColor" width="18" height="18" />
+            </template>
             <b-table-lite :items="heroesChartDataTable"></b-table-lite>
           </b-tab>
         </b-tabs>
