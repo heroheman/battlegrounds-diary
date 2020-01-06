@@ -202,7 +202,7 @@ const getters = {
 
     return points
   },
-  leaderboard: state => {
+  leaderboardHeroes: state => {
     const leaderboard = []
     for (const hero of state.heroes) {
       let heroResults = state.results.filter( r => hero.id === r.hero )
@@ -226,6 +226,63 @@ const getters = {
         data[hr.placement] += 1
         data.points += parseInt(hr.difference)
         switch (hr.placement) {
+          case '1':
+            data.top1 +=1
+            data.top4 +=1
+            break
+          case '2':
+            data.top4 +=1
+            break
+          case '3':
+            data.top4 +=1
+            break
+          case '4':
+            data.top4 +=1
+            break
+          default:
+            break
+        }
+      }
+
+      if (
+        !(data[1] === 0 &&
+        data[2] === 0 &&
+        data[3] === 0 &&
+        data[4] === 0 &&
+        data[5] === 0 &&
+        data[6] === 0 &&
+        data[7] === 0 &&
+        data[8] === 0)
+      ) {
+        leaderboard.push(data)
+      }
+    }
+    return leaderboard
+  },
+  leaderboardTribes: state => {
+    const leaderboard = []
+    for (const tribe of state.tribes) {
+      let tribeResults = state.results.filter( r => tribe.id === r.hero )
+
+      let data = {
+        hero: tribe.name,
+        points: 0,
+        top1: 0,
+        top4: 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+      }
+
+      for (let tr of tribeResults) {
+        data[tr.placement] += 1
+        data.points += parseInt(tr.difference)
+        switch (tr.placement) {
           case '1':
             data.top1 +=1
             data.top4 +=1

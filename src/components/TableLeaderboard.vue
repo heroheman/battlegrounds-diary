@@ -2,27 +2,29 @@
   <div class="leaderboard">
     <b-row>
       <b-col>
-        <h3 class="h4 position-absolute">Leaderboard</h3>
-        <b-tabs lazy align="right">
-          <b-tab title="All">
+        <h3 class="h4">Leaderboard</h3>
+        <b-tabs lazy>
+          <b-tab title="Heroes">
             <b-table
               responsive
+              small
               :fields="all.fields"
               :sort-by.sync="all.sortBy"
               :sort-desc.sync="all.sortDesc"
-              :items="leaderboard">
+              :items="leaderboardHeroes">
             </b-table>
           </b-tab>
-          <b-tab title="Top 1 / Top 4">
+          <b-tab title="Heroes Top 1 / Top 4">
             <b-row class="mt-3">
               <b-col sm="12" md="4" class="mb-3">
                 <b-card header="Top 1">
                   <b-table
                     responsive
+                    small
                     :fields="top1.fields"
                     :sort-by.sync="top1.sortBy"
                     :sort-desc.sync="top1.sortDesc"
-                    :items="leaderboard">
+                    :items="leaderboardHeroes">
                   </b-table>
                 </b-card>
               </b-col>
@@ -31,16 +33,58 @@
                 <b-card header="Top 4">
                   <b-table
                     responsive
+                    small
                     :fields="top4.fields"
                     :sort-by.sync="top4.sortBy"
                     :sort-desc.sync="top4.sortDesc"
-                    :items="leaderboard">
+                    :items="leaderboardHeroes">
+                  </b-table>
+                </b-card>
+              </b-col>
+            </b-row>
+          </b-tab>
+
+          <b-tab title="Tribes">
+            <b-table
+              responsive
+              small
+              :fields="all.fields"
+              :sort-by.sync="all.sortBy"
+              :sort-desc.sync="all.sortDesc"
+              :items="leaderboardTribes">
+            </b-table>
+          </b-tab>
+          <b-tab title="Tribes Top 1 / Top 4">
+            <b-row class="mt-3">
+              <b-col sm="12" md="4" class="mb-3">
+                <b-card header="Top 1">
+                  <b-table
+                    responsive
+                    small
+                    :fields="top1.fields"
+                    :sort-by.sync="top1.sortBy"
+                    :sort-desc.sync="top1.sortDesc"
+                    :items="leaderboardTribes">
+                  </b-table>
+                </b-card>
+              </b-col>
+
+              <b-col sm="12" md="8" class="mb-3">
+                <b-card header="Top 4">
+                  <b-table
+                    responsive
+                    small
+                    :fields="top4.fields"
+                    :sort-by.sync="top4.sortBy"
+                    :sort-desc.sync="top4.sortDesc"
+                    :items="leaderboardTribes">
                   </b-table>
                 </b-card>
               </b-col>
             </b-row>
           </b-tab>
         </b-tabs>
+
       </b-col>
     </b-row>
   </div>
@@ -89,7 +133,10 @@ export default {
     }
   }),
   computed: {
-    ...mapGetters('history', ['leaderboard'])
+    ...mapGetters('history', [
+      'leaderboardHeroes',
+      'leaderboardTribes'
+    ])
   }
 }
 </script>
