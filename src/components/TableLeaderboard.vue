@@ -3,18 +3,27 @@
     <b-row>
       <b-col>
         <h3 class="h4">Leaderboard</h3>
-        <b-tabs lazy>
+        <b-tabs small lazy>
           <b-tab title="Heroes">
-            <b-table
-              responsive
-              small
-              :fields="all.fields"
-              :sort-by.sync="all.sortBy"
-              :sort-desc.sync="all.sortDesc"
-              :items="leaderboardHeroes">
-            </b-table>
+            <template v-slot:title>
+              <unicon class="tab-icon" name="ninja" fill="currentColor" width="18" height="18" />
+            </template>
+            <b-card class="mt-3" header="All Heroes">
+              <b-table
+                responsive
+                small
+                :fields="all.fields"
+                :sort-by.sync="all.sortBy"
+                :sort-desc.sync="all.sortDesc"
+                :items="leaderboardHeroes">
+              </b-table>
+            </b-card>
           </b-tab>
           <b-tab title="Heroes Top 1 / Top 4">
+            <template v-slot:title>
+              <unicon class="tab-icon" name="ninja" fill="currentColor" width="18" height="18" />
+              1/4
+            </template>
             <b-row class="mt-3">
               <b-col sm="12" md="4" class="mb-3">
                 <b-card header="Top 1">
@@ -45,19 +54,28 @@
           </b-tab>
 
           <b-tab title="Tribes">
-            <b-table
-              responsive
-              small
-              :fields="all.fields"
-              :sort-by.sync="all.sortBy"
-              :sort-desc.sync="all.sortDesc"
-              :items="leaderboardTribes">
-            </b-table>
+            <template v-slot:title>
+              <unicon class="tab-icon" name="circle" fill="currentColor" width="18" height="18" />
+            </template>
+            <b-card class="mt-3" header="All Tribes">
+              <b-table
+                responsive
+                small
+                :fields="all.fields"
+                :sort-by.sync="all.sortBy"
+                :sort-desc.sync="all.sortDesc"
+                :items="leaderboardTribes">
+              </b-table>
+            </b-card>
           </b-tab>
           <b-tab title="Tribes Top 1 / Top 4">
+            <template v-slot:title>
+              <unicon class="tab-icon" name="circle" fill="currentColor" width="18" height="18" />
+              1/4
+            </template>
             <b-row class="mt-3">
               <b-col sm="12" md="4" class="mb-3">
-                <b-card header="Top 1">
+                <b-card header="Tribes Top 1">
                   <b-table
                     responsive
                     small
@@ -70,7 +88,7 @@
               </b-col>
 
               <b-col sm="12" md="8" class="mb-3">
-                <b-card header="Top 4">
+                <b-card header="Tribes Top 4">
                   <b-table
                     responsive
                     small
