@@ -85,4 +85,16 @@ export const deepSameKeys = (o1, o2) => {
   });
 };
 
+// this gives an object with dates as keys
+export const groupByDay = (data) => {
+  return data.reduce((groups, result) => {
+    const date = result.timestamp.split('T')[0];
+    if (!groupByDay[date]) {
+      groupByDay[date] = [];
+    }
+    groupByDay[date].push(result);
+    return groupByDay;
+  }, {});
+}
+
 export default placementEmoji

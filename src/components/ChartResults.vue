@@ -4,6 +4,7 @@
       <b-row>
         <b-col>
           <TableStatsGlobal class="mb-3" />
+          <ChartDay class="mb-5" />
         </b-col>
       </b-row>
       <b-row>
@@ -38,6 +39,7 @@
 
 <script>
 import ChartMmr from '@/components/ChartMMR'
+import ChartDay from '@/components/ChartDay'
 import ChartHeroes from '@/components/ChartHeroes'
 import ChartTribes from '@/components/ChartTribes'
 import ChartSummary from '@/components/ChartSummary'
@@ -49,6 +51,7 @@ export default {
   name: 'ChartResults',
   components: {
     ChartMmr,
+    ChartDay,
     ChartHeroes,
     ChartTribes,
     ChartSummary,

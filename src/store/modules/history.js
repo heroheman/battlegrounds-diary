@@ -113,6 +113,80 @@ const getters = {
     mmr.labels = mmr.labels.slice(resultsLength * -1)
     return mmr;
   },
+  dayChartData: state => resultsLength => {
+    let days = {
+      labels: [],
+      total: [], points: [],
+      win: [], lose: [],
+      top1: [], top2: [], top3: [], top4: [],
+      top5: [], top6: [], top7: [], top8: [],
+    }
+
+    // this gives an object with dates as keys
+    const groups = state.results.reduce((groups, game) => {
+      const date = game.timestamp.split('T')[0];
+      if (!groups[date]) {
+        groups[date] = [];
+      }
+      groups[date].push(game);
+      return groups;
+    }, {});
+
+    // add it in the array format
+    const groupArray = Object.keys(groups).map((date) => {
+      return {
+        date, games: groups[date]
+      };
+    });
+
+
+    for (const day of groupArray) {
+      let tmp = {
+        win: 0, lose: 0,
+      }
+      tmp['1'] = 0
+      tmp['2'] = 0
+      tmp['3'] = 0
+      tmp['4'] = 0
+      tmp['5'] = 0
+      tmp['6'] = 0
+      tmp['7'] = 0
+      tmp['8'] = 0
+
+      for (const game of day.games) {
+        tmp[game.placement] += 1
+        game.placement < 5 ? tmp.win++ : tmp.lose++
+      }
+
+      days.labels.push(day.date)
+      days.total.push(day.games.length)
+      days.win.push(tmp.win)
+      days.lose.push(tmp.lose)
+      days.top1.push(tmp['1'])
+      days.top2.push(tmp['2'])
+      days.top3.push(tmp['3'])
+      days.top4.push(tmp['4'])
+      days.top5.push(tmp['5'])
+      days.top6.push(tmp['6'])
+      days.top7.push(tmp['7'])
+      days.top8.push(tmp['8'])
+    }
+
+    days.labels = days.labels.slice(resultsLength * -1)
+    days.total = days.total.slice(resultsLength * -1)
+    days.win = days.win.slice(resultsLength * -1)
+    days.lose = days.lose.slice(resultsLength * -1)
+    days.top1 = days.top1.slice(resultsLength * -1)
+    days.top2 = days.top2.slice(resultsLength * -1)
+    days.top3 = days.top3.slice(resultsLength * -1)
+    days.top4 = days.top4.slice(resultsLength * -1)
+    days.top5 = days.top5.slice(resultsLength * -1)
+    days.top6 = days.top6.slice(resultsLength * -1)
+    days.top7 = days.top7.slice(resultsLength * -1)
+    days.top8 = days.top8.slice(resultsLength * -1)
+
+    return days;
+  },
   heroesChartData: state => {
     let heroes = {
       labels: [],
