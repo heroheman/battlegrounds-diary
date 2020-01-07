@@ -119,6 +119,10 @@ export default {
       return {
         responsive: true,
         maintainAspectRatio: false,
+        legend: {
+          position: 'bottom',
+          align: 'start'
+        },
         scales: {
           xAxes: [{
             stacked: this.isStacked
