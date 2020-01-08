@@ -162,7 +162,7 @@ export default {
     ]),
     submitResult(e) {
       e.preventDefault();
-      this.result.timestamp = new Date()
+      this.result.timestamp = new Date().toISOString()
       if (this.result.missed === 'true' || !this.results.length) {
         this.result.difference = 0
       } else {
