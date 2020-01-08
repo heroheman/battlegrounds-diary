@@ -1,7 +1,7 @@
 import { getField, updateField } from 'vuex-map-fields';
 
 const state = {
-  averageTavernUpgrades: 4.5,
+  averageTavernUpgrades: 3.5,
   top4: '',
   first: '',
   upgrades: '',

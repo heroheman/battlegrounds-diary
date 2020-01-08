@@ -8,7 +8,7 @@
           <p>The calculation is based on the number of <em>Tavern Upgrades</em>. Most of the time, a player reaches level 4 or 5 before he wins or gets eliminated.
             Depending on your own estimation you can also adjust the base value.</p>
           <p>
-            <label for="atu"><strong>Average Tavern Upgrades</strong></label>
+            <label for="atu"><strong>Average Tavern Upgrades (minus Tavern Tier 1)</strong></label>
             <b-input id="atu" v-model="averageTavernUpgrades"></b-input>
           </p>
         </b-alert>
