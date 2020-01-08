@@ -6,6 +6,8 @@
         <strong>2020-01-08:</strong>
         <ul>
           <li>Games per day - Barchart</li>
+          <li>Fix Calculator Base Value from 4.5 to 3.5 as Tavern Tier 1 itself is not an upgrade.
+            Thx <a href="https://www.reddit.com/r/BobsTavern/comments/elbdnz/the_built_in_stats_are_pathetic/fdjnjox/">u/HongdongDonald</a> for the notice!</li>
         </ul>
       </li>
       <li>
