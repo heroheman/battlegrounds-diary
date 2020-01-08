@@ -3,6 +3,12 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-08:</strong>
+        <ul>
+          <li>Games per day - Barchart</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-06:</strong>
         <ul>
           <li>Add tribe leaderboard</li>
