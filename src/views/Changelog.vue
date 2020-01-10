@@ -3,6 +3,9 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-10:</strong> Readded Pyramad and Patches
+      </li>
+      <li>
         <strong>2020-01-08:</strong>
         <ul>
           <li>Games per day - Barchart</li>
