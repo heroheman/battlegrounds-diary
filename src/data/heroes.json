@@ -126,7 +126,7 @@
     },
     {
         "id": 25,
-        "active": false,
+        "active": true,
         "name": "Patches the Pirate"
     },
     {
