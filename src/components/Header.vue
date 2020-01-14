@@ -2,17 +2,21 @@
   <header>
     <b-navbar fixed="top" toggleable="lg" type="dark" variant="dark">
       <b-container>
-        <b-navbar-brand to="/" title="Battlegrounds Diary">
+        <b-navbar-brand tag="h1" to="/" title="Battlegrounds Diary">
+          <unicon
+            name="book-open"
+            fill="currentColor"
+            width="15" height="15" />
           Battlegrounds Diary
         </b-navbar-brand>
 
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle label="Show Menu" target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/history">
               <unicon
-                name="book-open"
+                name="list-ul"
                 fill="currentColor"
                 width="15" height="15" />
               History
