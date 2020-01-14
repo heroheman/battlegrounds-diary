@@ -20,7 +20,7 @@
         <!-- <b-form-checkbox v-model="showWins" switch>Win</b-form-checkbox> -->
         <!-- <b-form-checkbox v-model="showLoses" switch>Lose</b-form-checkbox> -->
 
-        <b-form-checkbox v-model="dataView" class="switch-box" @change="toggleData" switch>Toggle View</b-form-checkbox>
+        <!-- <b-form-checkbox v-model="dataView" class="switch-box" @change="toggleData" switch>Toggle View</b-form-checkbox> -->
         <!-- <b-form-checkbox v-model="stacked" @change="updateKey" switch>Stacked</b-form-checkbox> -->
 
       </b-col>
@@ -58,7 +58,10 @@
         </b-form-select>
         <b-form-text>If you have large amount of data, adjust the width and scroll/drag horizontally</b-form-text>
       </b-col>
-      <b-col cols="12" sm="6" md="4" class="mb-2 text-md-right">
+      <b-col cols="6" sm="6" md="2" class="mb-4">
+        <b-form-checkbox v-model="dataView" class="switch-box" @change="toggleData" switch>Toggle View</b-form-checkbox>
+      </b-col>
+      <b-col cols="6" sm="6" md="2" class="mb-2 text-md-right">
         <DownloadChartButton filename="placement-by-day" :canvas="canvas" />
       </b-col>
     </b-row>

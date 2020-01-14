@@ -79,10 +79,10 @@ export default {
       'dark'
     ]),
     darkMode () {
-      if (this.dark === 'true') {
-        return 'dark'
-      } else {
+      if (this.dark !== 'true') {
         return 'light'
+      } else {
+        return 'dark'
       }
     }
   }

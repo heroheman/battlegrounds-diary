@@ -1,6 +1,6 @@
 <template>
-  <div class="settings">
-    <h1 class="mb-4">Settings</h1>
+  <b-card title-tag="h1" title="Settings">
+    <hr class="my-4">
     <h3>Misc</h3>
     <b-form-checkbox
       v-model="darkMode"
@@ -12,7 +12,7 @@
       Darkmode (Header only)
     </b-form-checkbox>
 
-    <hr>
+    <hr class="my-4">
 
     <h3>Import / Export your Data</h3>
     <b-alert show variant="warning">
@@ -30,7 +30,7 @@
         <AccBackup />
       </b-tab>
     </b-tabs>
-  </div>
+  </b-card>
 </template>
 
 <script>
