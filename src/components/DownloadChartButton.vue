@@ -1,5 +1,5 @@
 <template>
-  <div class="text-right">
+  <div>
     <b-button variant="outline-info" @click="downloadAsImage()" size="sm">
       <unicon class="download-icon" name="image-download" fill="currentColor" width="13" height="13"></unicon>
 

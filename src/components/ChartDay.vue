@@ -4,6 +4,8 @@
       <b-col cols="12" sm="6" md="4">
         <h3>Results by day</h3>
       </b-col>
+      <b-col cols="6" sm="3" md="4">
+      </b-col>
       <b-col cols="6" sm="3" md="4" class="text-md-right">
         <!-- <b-form-checkbox v-model="showTop1" switch>Top 1</b-form-checkbox> -->
         <!-- <b-form-checkbox v-model="showTop2" switch>Top 2</b-form-checkbox> -->
@@ -22,7 +24,22 @@
         <!-- <b-form-checkbox v-model="stacked" @change="updateKey" switch>Stacked</b-form-checkbox> -->
 
       </b-col>
-      <b-col cols="6" sm="3" md="4" class="text-right">
+    </b-row>
+    <b-row class="mb-4">
+      <b-col cols="12">
+        <div class="chart-outer">
+          <ChartBar :key="key"
+            class="chart-inner"
+            :class="[ getSizeClass ]"
+            @canvas='canvas = $event'
+            :chartData="lineChartData"
+            :options="lineChartOptions"
+          />
+        </div>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col cols="12" sm="6" md="4" class="mb-2">
         <b-form-select :selected="lineMaxItems" id="amount" v-model="lineMaxItems">
           <option value="5">Last 5 days</option>
           <option value="10">Last 10</option>
@@ -32,10 +49,16 @@
           <option value="0">All</option>
         </b-form-select>
       </b-col>
-    </b-row>
-    <b-row>
-      <b-col cols="12">
-        <ChartBar :key="key" @canvas='canvas = $event' :chartData="lineChartData" :options="lineChartOptions" />
+      <b-col cols="12" sm="6" md="4" class="mb-2">
+        <b-form-select :selected="defaultWidth" id="width" v-model="defaultWidth">
+          <option value="100">Width: 1x</option>
+          <option value="150">Width: 1.5x</option>
+          <option value="200">Width: 2x</option>
+          <option value="300">Width: 3x</option>
+        </b-form-select>
+        <b-form-text>If you have large amount of data, adjust the width and scroll/drag horizontally</b-form-text>
+      </b-col>
+      <b-col cols="12" sm="6" md="4" class="mb-2 text-md-right">
         <DownloadChartButton filename="placement-by-day" :canvas="canvas" />
       </b-col>
     </b-row>
@@ -55,6 +78,7 @@ export default {
     return ({
       key: 0,
       dataView: true,
+      defaultWidth: 100,
       stacked: true,
       showTop1: true,
       showTop2: true,
@@ -112,6 +136,9 @@ export default {
     ...mapGetters('history', [
       'dayChartData',
     ]),
+    getSizeClass () {
+      return `w${this.defaultWidth}`
+    },
     isStacked () {
       return this.stacked
     },
@@ -219,4 +246,20 @@ export default {
   position: relative;
   top: 6px;
 }
+
+.chart-outer {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.chart-inner {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.w100 { width: 100%; }
+.w150 { width: 150%; }
+.w200 { width: 200%; }
+.w300 { width: 300%; }
+.w400 { width: 400%; }
 </style>
