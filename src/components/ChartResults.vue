@@ -4,12 +4,16 @@
       <b-row>
         <b-col>
           <TableStatsGlobal class="mb-3" />
-          <ChartDay class="mb-5" />
         </b-col>
       </b-row>
       <b-row>
         <b-col>
           <ChartMmr class="mb-5" />
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+          <ChartDay class="mb-5" />
         </b-col>
       </b-row>
       <b-row>
