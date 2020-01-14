@@ -9,7 +9,7 @@
       unchecked-value=false
       switch
       >
-      DarkMode
+      Darkmode (Header only)
     </b-form-checkbox>
 
     <hr>
