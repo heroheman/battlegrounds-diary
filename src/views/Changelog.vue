@@ -10,6 +10,7 @@
           <li>Leaderboard: Points per game</li>
           <li>Create backup manually and download them directly as file</li>
           <li>Change Header to light color (in settings)</li>
+          <li>Add width option to large charts</li>
         </ul>
       </li>
       <li>
