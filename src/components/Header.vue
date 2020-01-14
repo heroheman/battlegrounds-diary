@@ -1,6 +1,6 @@
 <template>
   <header>
-    <b-navbar  toggleable="lg" type="dark" variant="dark">
+    <b-navbar fixed="top" toggleable="lg" type="dark" variant="dark">
       <b-container>
         <b-navbar-brand>
           Battlegrounds Diary
@@ -10,13 +10,35 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item to="/history">History</b-nav-item>
-            <b-nav-item to="/calculator">Stat Calculator</b-nav-item>
+            <b-nav-item to="/history">
+              <unicon
+                name="book-open"
+                fill="currentColor"
+                width="15" height="15" />
+              History
+            </b-nav-item>
+            <b-nav-item to="/calculator">
+              <unicon
+                name="calculator"
+                fill="currentColor"
+                width="15" height="15" />
+              Stat Calculator
+            </b-nav-item>
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto">
-            <b-nav-item to="/about">About</b-nav-item>
+            <b-nav-item to="/about">
+              <unicon
+                name="question-circle"
+                fill="currentColor"
+                width="15" height="15" />
+              About
+            </b-nav-item>
             <b-nav-item to="/settings">
+              <unicon
+                name="cog"
+                fill="currentColor"
+                width="15" height="15" />
               Settings
             </b-nav-item>
             <b-nav-text class="text-light">
@@ -45,3 +67,14 @@ export default {
   }
 }
 </script>
+
+<style>
+header {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.nav-link .unicon {
+  position: relative;
+  top: -1px;
+}
+</style>

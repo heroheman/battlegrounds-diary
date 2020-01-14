@@ -18,13 +18,15 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,
   uniArrowGrowth, uniChartDown, uniCog, uniChartPieAlt, uniNinja,
-  uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes
+  uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes, uniBookOpen,
+  uniCalculator, uniQuestionCircle
 } from 'vue-unicons/src/icons'
 
 Unicon.add([
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,
   uniArrowGrowth, uniChartDown, uniCog, uniChartPieAlt, uniNinja,
-  uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes
+  uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes, uniBookOpen,
+  uniCalculator, uniQuestionCircle
 ])
 
 Vue.use(Unicon)

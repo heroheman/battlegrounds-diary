@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header class="mb-4"></Header>
+    <Header></Header>
     <b-container class="main-container">
       <main>
         <router-view/>
