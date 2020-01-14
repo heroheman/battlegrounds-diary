@@ -4,9 +4,14 @@ import history from '@/store/modules/history'
 import calculator from '@/store/modules/calculator'
 import createPersistedState from 'vuex-persistedstate'
 
+import { vuexfireMutations } from 'vuexfire'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  mutations: {
+    ...vuexfireMutations,
+  },
   modules: {
     history, calculator
   },
