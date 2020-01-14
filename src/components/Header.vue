@@ -1,6 +1,6 @@
 <template>
   <header>
-    <b-navbar fixed="top" toggleable="lg" type="dark" variant="dark">
+    <b-navbar fixed="top" toggleable="lg" :type="darkMode" :variant="darkMode">
       <b-container>
         <b-navbar-brand tag="h1" to="/" title="Battlegrounds Diary">
           <unicon
@@ -45,7 +45,14 @@
                 width="15" height="15" />
               Settings
             </b-nav-item>
-            <b-nav-text class="text-light">
+            <b-nav-item to="/changelog">
+              <unicon
+                name="cog"
+                fill="currentColor"
+                width="15" height="15" />
+              Changelog
+            </b-nav-item>
+            <b-nav-text>
               <strong>
                 MMR:
               </strong>
@@ -67,7 +74,17 @@ export default {
   computed: {
     ...mapState('history', [
       'mmr'
-    ])
+    ]),
+    ...mapState('settings', [
+      'dark'
+    ]),
+    darkMode () {
+      if (this.dark === 'true') {
+        return 'dark'
+      } else {
+        return 'light'
+      }
+    }
   }
 }
 </script>

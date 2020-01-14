@@ -1,6 +1,19 @@
 <template>
   <div class="settings">
     <h1 class="mb-4">Settings</h1>
+    <h3>Misc</h3>
+    <b-form-checkbox
+      v-model="darkMode"
+      name="checkbox-1"
+      value=true
+      unchecked-value=false
+      switch
+      >
+      DarkMode
+    </b-form-checkbox>
+
+    <hr>
+
     <h3>Import / Export your Data</h3>
     <b-alert show variant="warning">
       <strong>Attention:</strong>
@@ -21,11 +34,25 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import AccBackup from '@/components/AccBackup'
 import SettingExport from '@/components/SettingExport'
 import SettingImport from '@/components/SettingImport'
+
 export default {
   name: 'Settings',
   components: { AccBackup, SettingExport, SettingImport },
+  data: () => ({}),
+  computed: {
+    ...mapState('settings', [ 'dark']),
+    darkMode: {
+      set(val) { this.TOGGLE_DARKMODE(val) },
+      get() { return this.dark }
+    }
+  },
+  methods: {
+    ...mapMutations('settings', ['TOGGLE_DARKMODE'])
+  }
 }
 </script>
