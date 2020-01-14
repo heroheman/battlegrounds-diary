@@ -64,6 +64,11 @@ const actions = {
   updateResult ({ commit }, data) {
     commit('UPDATE_RESULT', data)
   },
+  setBackupResults ({ commit }, data) {
+    return new Promise(async (resolve, reject) => {
+      commit('SET_BACKUP_RESULTS')
+    })
+  },
   setImportedResults ({ commit, state }, data) {
     return new Promise(async (resolve, reject) => {
       const payload = decodeDiaryData(data)
