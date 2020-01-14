@@ -47,7 +47,7 @@
             </b-nav-item>
             <b-nav-item to="/changelog">
               <unicon
-                name="cog"
+                name="info-circle"
                 fill="currentColor"
                 width="15" height="15" />
               Changelog
