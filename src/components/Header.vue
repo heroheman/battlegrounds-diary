@@ -2,7 +2,7 @@
   <header>
     <b-navbar fixed="top" toggleable="lg" type="dark" variant="dark">
       <b-container>
-        <b-navbar-brand>
+        <b-navbar-brand to="/" title="Battlegrounds Diary">
           Battlegrounds Diary
         </b-navbar-brand>
 
