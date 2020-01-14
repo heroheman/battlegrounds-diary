@@ -7,7 +7,7 @@
           width="15" height="15" />
         Hide form
     </b-button>
-    <b-button block v-else variant="success" size="lg" @click="toggleForm" class="mb-3">
+    <b-button block v-else variant="outline-success" size="lg" @click="toggleForm" class="mb-3">
         <unicon
           name="plus"
           fill="currentColor"
