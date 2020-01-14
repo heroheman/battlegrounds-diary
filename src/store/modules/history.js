@@ -289,6 +289,7 @@ const getters = {
 
       let data = {
         hero: hero.name,
+        gamesPlayed: heroResults.length,
         points: 0,
         top1: 0,
         top4: 0,
@@ -324,6 +325,8 @@ const getters = {
         }
       }
 
+      data.pointsAverage = precise(data.points / data.gamesPlayed)
+
       if (
         !(data[1] === 0 &&
         data[2] === 0 &&
@@ -346,6 +349,8 @@ const getters = {
 
       let data = {
         tribe: tribe.name,
+        gamesPlayed: tribeResults.length,
+        pointsAverage: 0,
         points: 0,
         top1: 0,
         top4: 0,
@@ -380,6 +385,8 @@ const getters = {
             break
         }
       }
+
+      data.pointsAverage = precise(data.points / data.gamesPlayed)
 
       if (
         !(data[1] === 0 &&

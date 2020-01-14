@@ -126,8 +126,10 @@ export default {
           { key: '6', label: '6' },
           { key: '7', label: '7' },
           { key: '8', label: '8' },
+          { key: 'gamesPlayed', label: 'Total' },
           { key: 'hero', label: 'Hero' },
           { key: 'points', label: 'Points', sortable: true },
+          { key: 'pointsAverage', label: 'Points/Game', sortable: true },
         ]
       },
       top1: {
@@ -164,8 +166,10 @@ export default {
           { key: '6', label: '6' },
           { key: '7', label: '7' },
           { key: '8', label: '8' },
+          { key: 'gamesPlayed', label: 'Total' },
           { key: 'tribe', label: 'Tribe' },
           { key: 'points', label: 'Points', sortable: true },
+          { key: 'pointsAverage', label: 'Points/Game', sortable: true },
         ]
       },
       top1: {
