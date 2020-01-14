@@ -4,16 +4,19 @@
       <b-row>
         <b-col>
           <TableStatsGlobal class="mb-3" />
+          <hr class="mb-4">
         </b-col>
       </b-row>
       <b-row>
         <b-col>
           <ChartMmr class="mb-5" />
+          <hr class="mb-4">
         </b-col>
       </b-row>
       <b-row>
         <b-col>
           <ChartDay class="mb-5" />
+          <hr class="mb-4">
         </b-col>
       </b-row>
       <b-row>
@@ -24,9 +27,11 @@
           <ChartTribes />
         </b-col>
       </b-row>
+      <hr class="mb-4">
       <b-row>
         <b-col>
           <TableLeaderboard class="mb-5" />
+          <hr class="mb-4">
         </b-col>
       </b-row>
       <b-row>

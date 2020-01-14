@@ -12,8 +12,10 @@ import BootstrapVue from 'bootstrap-vue'
 import Moment from 'vue-moment'
 import Unicon from 'vue-unicons'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+import '@/assets/scss/custom.scss'
+
 
 import {
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,

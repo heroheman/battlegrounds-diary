@@ -3,7 +3,7 @@
     <b-row>
       <b-col>
         <h3 class="h4 position-absolute">Games by Tribe</h3>
-        <b-tabs lazy align="right">
+        <b-tabs pills lazy align="right">
           <b-tab title="Pie">
             <template v-slot:title>
               <unicon class="tab-icon" name="chart-pie-alt" fill="currentColor" width="18" height="18" />

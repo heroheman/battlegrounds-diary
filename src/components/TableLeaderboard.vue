@@ -2,8 +2,8 @@
   <div class="leaderboard">
     <b-row>
       <b-col>
-        <h3 class="h4">Leaderboard</h3>
-        <b-tabs small lazy>
+        <h3 class="h4 pos-abs">Leaderboard</h3>
+        <b-tabs pills align="right" small lazy>
           <b-tab title="Heroes">
             <template v-slot:title>
               <unicon class="tab-icon" name="ninja" fill="currentColor" width="18" height="18" />
@@ -202,3 +202,11 @@ export default {
   }
 }
 </script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .pos-abs {
+    position: absolute;
+  }
+}
+</style>
