@@ -4,8 +4,10 @@
 
     <hr>
 
-    <p>You can also create a manual backup:</p>
-    <b-button @click="createBackup">Create Backup</b-button>
+    <p>
+      You can also create a manual backup:
+      <b-button variant="info" size="sm" @click="createBackup">Create Backup</b-button>
+    </p>
 
     <hr>
 
@@ -14,6 +16,9 @@
         <strong>
         {{ backup.createdAt | moment('from', 'now') }}
         </strong>
+        <b-button class="float-right" variant="info" size="sm" @click="downloadBackup(backup.data)">
+          Download
+        </b-button>
       </p>
       <b-textarea class="mb-4" rows="3" :value="backup.data">
       </b-textarea>
@@ -27,6 +32,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { downloadAsJSON } from '@/helper'
+
 export default {
   name: 'AccBackup',
   computed: {
@@ -34,12 +41,14 @@ export default {
   },
   methods: {
     ...mapActions('history', ['setBackupResults']),
+    downloadBackup(data) {
+      downloadAsJSON(data)
+    },
     createBackup() {
       this.setBackupResults()
         .then(() => this.toast(true))
     },
     toast(append = false) {
-      this.counter++
       this.$bvToast.toast('Backup created', {
         toaster: 'b-toaster-bottom-center',
         solid: true,
