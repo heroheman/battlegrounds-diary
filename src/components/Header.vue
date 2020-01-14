@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header">
     <b-navbar fixed="top" toggleable="lg" :type="darkMode" :variant="darkMode">
       <b-container>
         <b-navbar-brand tag="h1" to="/" title="Battlegrounds Diary">
@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style>
-header {
+.header {
   position: relative;
   margin-bottom: 5rem;
 }
