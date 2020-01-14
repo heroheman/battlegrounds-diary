@@ -1,100 +1,119 @@
 <template>
-  <b-card header="Add your data">
-    <b-form @submit="submitResult" @reset="handleReset">
-      <b-row>
-        <b-col sm="12" md="4" class="mb-4">
-          <!-- HERO SELECTION -->
-          <b-form-select required v-model="result.hero">
-            <template v-slot:first>
-              <option :value="null" disabled>-- Please select a hero --</option>
-            </template>
-            <option v-for="(h,index) in heroOptions" :key="index" :value="h.value" :class="h.class">
+  <div class="form-result">
+    <b-button block v-if="addDataVisible" variant="danger" size="lg" @click="toggleForm" class="mb-3">
+        <unicon
+          name="times"
+          fill="currentColor"
+          width="15" height="15" />
+        Hide form
+    </b-button>
+    <b-button block v-else variant="success" size="lg" @click="toggleForm" class="mb-3">
+        <unicon
+          name="plus"
+          fill="currentColor"
+          width="15" height="15" />
+        Add your result
+    </b-button>
+
+    <transition name="slide-fade">
+    <b-card header="Add your data" v-if="addDataVisible">
+      <b-form @submit="submitResult" @reset="handleReset">
+        <b-row>
+          <b-col sm="12" md="4" class="mb-4">
+            <!-- HERO SELECTION -->
+            <b-form-select required v-model="result.hero">
+              <template v-slot:first>
+                <option :value="null" disabled>-- Please select a hero --</option>
+              </template>
+              <option v-for="(h,index) in heroOptions" :key="index" :value="h.value" :class="h.class">
               {{ h.text }}
-            </option>
-          </b-form-select>
-        </b-col>
+              </option>
+            </b-form-select>
+          </b-col>
 
-        <b-col sm="12" md="4" class="mb-4">
-          <!-- PLACE SELECTION -->
-          <b-form-select required v-model="result.placement">
-            <template v-slot:first>
-              <option :value="null" disabled>-- Results --</option>
-            </template>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="null">I don't wanna talk about this</option>
-          </b-form-select>
-        </b-col>
+          <b-col sm="12" md="4" class="mb-4">
+            <!-- PLACE SELECTION -->
+            <b-form-select required v-model="result.placement">
+              <template v-slot:first>
+                <option :value="null" disabled>-- Results --</option>
+              </template>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="null">I don't wanna talk about this</option>
+            </b-form-select>
+          </b-col>
 
-        <b-col sm="12" md="4" class="mb-4">
-          <!-- PLACE SELECTION -->
-          <b-form-select required v-model="result.tribe" :options="tribeOptions">
-            <template v-slot:first>
-              <option :value="null" disabled>-- Select tribe --</option>
-            </template>
-          </b-form-select>
-        </b-col>
-      </b-row>
+          <b-col sm="12" md="4" class="mb-4">
+            <!-- PLACE SELECTION -->
+            <b-form-select required v-model="result.tribe" :options="tribeOptions">
+              <template v-slot:first>
+                <option :value="null" disabled>-- Select tribe --</option>
+              </template>
+            </b-form-select>
+          </b-col>
+        </b-row>
 
-      <b-row class="mb-4">
-        <b-col sm="12" md="4" class="mb-4">
-          <b-form-input required v-model="result.mmr" type="number" placeholder="New Rating" />
-        </b-col>
+        <b-row class="mb-4">
+          <b-col sm="12" md="4" class="mb-4">
+            <b-form-input required v-model="result.mmr" type="number" placeholder="New Rating" />
+          </b-col>
 
-        <b-col sm="12" md="4" class="mb-4">
-          <!-- PLACE SELECTION -->
-          <b-form-select required v-model="result.summary" :options="summaryOptions">
-            <template v-slot:first>
-              <option :value="null" disabled>-- How are feeling about this? --</option>
-            </template>
-          </b-form-select>
-        </b-col>
-      </b-row>
+          <b-col sm="12" md="4" class="mb-4">
+            <!-- PLACE SELECTION -->
+            <b-form-select required v-model="result.summary" :options="summaryOptions">
+              <template v-slot:first>
+                <option :value="null" disabled>-- How are feeling about this? --</option>
+              </template>
+            </b-form-select>
+          </b-col>
+        </b-row>
 
-      <b-row>
-        <b-col sm="12" md="12" class="mb-4">
-          <b-form-textarea
-            id="note"
-            class="mb-3"
-            v-model="result.note"
-            size="sm"
-            placeholder="Optional match notes e.g. 'Could not find Rock Hunter'"
-            rows="2"
-            max-rows="6"
-          />
-        </b-col>
-      </b-row>
+        <b-row>
+          <b-col sm="12" md="12" class="mb-4">
+            <b-form-textarea
+              id="note"
+              class="mb-3"
+              v-model="result.note"
+              size="sm"
+              placeholder="Optional match notes e.g. 'Could not find Rock Hunter'"
+              rows="2"
+              max-rows="6"
+              />
+          </b-col>
+        </b-row>
 
-      <b-row>
+        <b-row>
 
-      </b-row>
+        </b-row>
 
-      <b-row class="mb-4">
-        <b-col sm="12" md="6">
-          <b-form-checkbox
-            v-model="result.missed"
-            name="checkbox-1"
-            value=true
-            unchecked-value=false
-            switch
-            >
-            Unlink from previous tracked games.
-          </b-form-checkbox>
-          <b-form-text class="mb-3">No point difference. Useful if you have not tracked some games</b-form-text>
-        </b-col>
-        <b-col class="text-right" sm="12" md="6">
-          <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
-          <b-button type="reset" variant="danger">Reset</b-button>
-        </b-col>
-      </b-row>
-    </b-form>
-  </b-card>
+        <b-row class="mb-4">
+          <b-col sm="12" md="6">
+            <b-form-checkbox
+              v-model="result.missed"
+              name="checkbox-1"
+              value=true
+              unchecked-value=false
+              switch
+              >
+              Unlink from previous tracked games.
+            </b-form-checkbox>
+              <b-form-text class="mb-3">No point difference. Useful if you have not tracked some games</b-form-text>
+          </b-col>
+          <b-col class="text-right" sm="12" md="6">
+            <b-button class="mr-2" type="submit" variant="primary">Submit</b-button>
+            <b-button type="reset" variant="danger">Reset</b-button>
+          </b-col>
+        </b-row>
+            </b-form>
+    </b-card>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -103,6 +122,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: "FormResult",
   data: () => ({
+    addDataVisible: false,
     result: {
       hero: null,
       placement: null,
@@ -160,6 +180,9 @@ export default {
     ...mapActions('history', [
       'addResult', 'setMmr'
     ]),
+    toggleForm() {
+      this.addDataVisible = !this.addDataVisible
+    },
     submitResult(e) {
       e.preventDefault();
       this.result.timestamp = new Date().toISOString()
@@ -176,6 +199,7 @@ export default {
         })
         .then(() => {
           this.toast(true)
+          this.addDataVisible = false
         })
     },
     handleReset(e) {
@@ -209,5 +233,19 @@ export default {
 <style>
 .text-cursive {
   font-weight: italic;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .4s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-10px);
+  opacity: 0;
 }
 </style>

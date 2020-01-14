@@ -8,13 +8,13 @@
       <b-form-input v-model="mmrPoints" required type="number" placeholder="eg. 4000" />
     </b-modal>
 
-    <b-row class="mb-4">
+    <b-row>
       <b-col>
         <FormResult />
       </b-col>
     </b-row>
 
-    <b-row class="mb-4">
+    <b-row class="mt-4 mb-4">
       <b-col>
         <b-card no-body>
           <b-tabs card lazy>
@@ -50,7 +50,7 @@ export default {
     FormResult, TableResults, ChartResults
   },
   data: () => ({
-    mmrPoints: ''
+    mmrPoints: '',
   }),
   computed: {
     ...mapState('history', [
