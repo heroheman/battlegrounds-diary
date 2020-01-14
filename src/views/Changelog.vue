@@ -3,6 +3,16 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-14:</strong>
+        <ul>
+          <li>Fixed Header and Icons</li>
+          <li>Show MMR before Day Chart</li>
+          <li>Leaderboard: Points per game</li>
+          <li>Create backup manually and download them directly as file</li>
+          <li>Change Header to light color (in settings)</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-10:</strong> Readded Pyramad and Patches
       </li>
       <li>
