@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-card>
     <b-row class="mb-3">
       <b-col cols="12" sm="6" md="4">
         <h3>Results by day</h3>
@@ -65,7 +65,7 @@
         <DownloadChartButton filename="placement-by-day" :canvas="canvas" />
       </b-col>
     </b-row>
-  </div>
+  </b-card>
 </template>
 
 <script>

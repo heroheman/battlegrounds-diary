@@ -1,12 +1,9 @@
 <template>
   <div class="charts">
-    <b-row>
-      <b-col>
-        <h3 class="h4">Your Satisfaction</h3>
-        <ChartDoughnut @canvas='canvas = $event' :chartData="pieChartData" :options="pieSummary.options" />
-        <DownloadChartButton filename="summary" :canvas="canvas" />
-      </b-col>
-    </b-row>
+    <b-card title="Satisfaction">
+      <ChartDoughnut @canvas='canvas = $event' :chartData="pieChartData" :options="pieSummary.options" />
+      <DownloadChartButton filename="summary" :canvas="canvas" />
+    </b-card>
   </div>
 </template>
 

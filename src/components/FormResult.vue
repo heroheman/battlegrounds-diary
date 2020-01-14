@@ -4,14 +4,14 @@
         <unicon
           name="times"
           fill="currentColor"
-          width="15" height="15" />
+          width="20" height="20" />
         Hide form
     </b-button>
     <b-button block v-else variant="outline-success" size="lg" @click="toggleForm" class="mb-3">
         <unicon
           name="plus"
           fill="currentColor"
-          width="15" height="15" />
+          width="20" height="20" />
         Add your result
     </b-button>
 

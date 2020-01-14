@@ -1,58 +1,60 @@
 <template>
   <div class="charts mb-4">
-    <b-row class="mb-3">
-      <b-col cols="6" sm="6" md="6">
-        <h3>Ranking</h3>
-      </b-col>
-      <b-col cols="4" sm="5" md="5" class="text-right">
-      </b-col>
-      <b-col cols="2" sm="1" md="1">
-        <b-button  title="Show label at points"
-          size="md" variant="outline-dark" @click="toggleGraphLabels()">
-          <unicon name="info-circle" fill="#888" width="15" height="15" />
-        </b-button>
-      </b-col>
-    </b-row>
-    <b-row class="mb-4">
-      <b-col>
-        <div class="chart-outer">
-          <ChartLine class="chart-inner"
-            :class="[ getSizeClass ]"
-            @canvas='canvas = $event'
-            :chartData="lineChartData"
-            :options="lineMmr.options"
-          />
-        </div>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col cols="12" sm="6" md="4" class="mb-2">
-        <!-- <label for="amount">Amount</label> -->
-        <b-form-select :selected="lineMaxItems" id="amount" v-model="lineMaxItems">
-          <option value="5">Last 5</option>
-          <option value="10">Last 10</option>
-          <option value="25">Last 25</option>
-          <option value="50">Last 50</option>
-          <option value="100">Last 100</option>
-          <option value="0">All</option>
-        </b-form-select>
-      </b-col>
-      <b-col cols="12" sm="6" md="4" class="mb-2">
-        <b-form-select :selected="defaultWidth" id="width" v-model="defaultWidth">
-          <option value="100">Width: 1x</option>
-          <option value="150">Width: 1.5x</option>
-          <option value="200">Width: 2x</option>
-          <option value="300">Width: 3x</option>
-          <option value="400">Width: 4x</option>
-          <option value="500">Width: 5x</option>
-          <option value="1000">Width: 10x</option>
-        </b-form-select>
-        <b-form-text>If you have large amount of data, adjust the width and scroll/drag horizontally</b-form-text>
-      </b-col>
-      <b-col cols="12" sm="6" md="4" class="mb-2 text-md-right">
-        <DownloadChartButton filename="mmr" :canvas="canvas" />
-      </b-col>
-    </b-row>
+    <b-card>
+      <b-row class="mb-3">
+        <b-col cols="6" sm="6" md="6">
+          <h3>Ranking</h3>
+        </b-col>
+        <b-col cols="4" sm="5" md="5" class="text-right">
+        </b-col>
+        <b-col cols="2" sm="1" md="1">
+          <b-button  title="Show label at points"
+                     size="md" variant="outline-dark" @click="toggleGraphLabels()">
+            <unicon name="info-circle" fill="#888" width="15" height="15" />
+          </b-button>
+        </b-col>
+      </b-row>
+      <b-row class="mb-4">
+        <b-col>
+          <div class="chart-outer">
+            <ChartLine class="chart-inner"
+                       :class="[ getSizeClass ]"
+                       @canvas='canvas = $event'
+                       :chartData="lineChartData"
+                       :options="lineMmr.options"
+                       />
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="12" sm="6" md="4" class="mb-2">
+          <!-- <label for="amount">Amount</label> -->
+          <b-form-select :selected="lineMaxItems" id="amount" v-model="lineMaxItems">
+            <option value="5">Last 5</option>
+            <option value="10">Last 10</option>
+            <option value="25">Last 25</option>
+            <option value="50">Last 50</option>
+            <option value="100">Last 100</option>
+            <option value="0">All</option>
+          </b-form-select>
+        </b-col>
+        <b-col cols="12" sm="6" md="4" class="mb-2">
+          <b-form-select :selected="defaultWidth" id="width" v-model="defaultWidth">
+            <option value="100">Width: 1x</option>
+            <option value="150">Width: 1.5x</option>
+            <option value="200">Width: 2x</option>
+            <option value="300">Width: 3x</option>
+            <option value="400">Width: 4x</option>
+            <option value="500">Width: 5x</option>
+            <option value="1000">Width: 10x</option>
+          </b-form-select>
+          <b-form-text>If you have large amount of data, adjust the width and scroll/drag horizontally</b-form-text>
+        </b-col>
+        <b-col cols="12" sm="6" md="4" class="mb-2 text-md-right">
+          <DownloadChartButton filename="mmr" :canvas="canvas" />
+        </b-col>
+      </b-row>
+    </b-card>
   </div>
 </template>
 

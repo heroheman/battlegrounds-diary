@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h3 class="h4">Average Gain/Lose per place</h3>
-    <b-table-lite :items="averageGainLose"/>
+    <b-card title="Average Gain/Lose per place">
+      <b-table small :items="averageGainLose"/>
+    </b-card>
   </div>
 </template>
 

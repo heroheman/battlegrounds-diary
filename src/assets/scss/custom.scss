@@ -13,3 +13,9 @@ body {
 a {
   color: var(--secondary);
 }
+
+.nav-link {
+  &.active {
+    font-weight: bold;
+  }
+}
