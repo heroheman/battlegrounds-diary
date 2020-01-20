@@ -58,8 +58,10 @@ const actions = {
   setMmr ({ commit }, data) {
     commit('SET_MMR', data)
   },
-  deleteResult ({ commit }, id) {
+  deleteResult ({ commit, state }, id) {
     commit('DELETE_RESULT', id)
+    // reset mmr to last added result
+    commit('SET_MMR', [...state.results].pop().mmr)
   },
   updateResult ({ commit }, data) {
     commit('UPDATE_RESULT', data)
