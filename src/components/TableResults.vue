@@ -92,16 +92,21 @@
 
       <template v-slot:cell(actions)="row">
         <div class="text-right">
-          <b-button v-if="row.item.note"
-                    variant="info" size="sm" title="Show note"
-                    class="button--delete" @click="row.toggleDetails">
-            <unicon name="comment-lines" fill="white" width="15" height="15" />
-          </b-button>
-
-          <b-button v-b-modal="`delete-modal-${row.item.id}`"
-            variant="danger" size="sm" title="Delete Entry" class="button--delete">
-            <unicon name="trash" fill="white" width="15" height="15" />
-          </b-button>
+          <b-dropdown variant="link" no-caret>
+            <template v-slot:button-content>
+              <unicon v-if="row.item.note" name="comment-lines" fill="black" width="15" height="15" />
+              <unicon name="trash" fill="red" width="15" height="15" />
+              <unicon name="ellipsis-v" fill="black" width="15" height="15" />
+            </template>
+            <b-dropdown-item v-if="row.item.note" @click="row.toggleDetails">
+              <unicon name="comment-lines" fill="white" width="15" height="15" />
+              Show Comment
+            </b-dropdown-item>
+            <b-dropdown-item v-b-modal="`delete-modal-${row.item.id}`">
+              <unicon name="trash" fill="white" width="15" height="15" />
+              Delete
+            </b-dropdown-item>
+          </b-dropdown>
 
           <b-modal :id="`delete-modal-${row.item.id}`"
             header-bg-variant="danger"
@@ -112,7 +117,6 @@
             @ok="handleDelete(row.item.id)">
             <p class="my-4">Are you sure?</p>
           </b-modal>
-
         </div>
 
       </template>
@@ -200,6 +204,10 @@ colgroup .summary { width: 100px; }
 colgroup .timestamp { width: 150px; }
 colgroup .actions { width: 100px; }
 
+table td
+table th {
+  vertical-align: middle;
+}
 
 .button--delete {
   padding: 0.15rem 0.5rem;
