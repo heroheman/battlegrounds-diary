@@ -49,6 +49,7 @@ const mutations = {
 
 const actions = {
   addResult ({ commit }, data) {
+    // eslint-disable-next-line no-unused-vars
     return new Promise(async (resolve, reject) => {
       data.id = uuidv4()
       commit('ADD_RESULT', data)
@@ -59,19 +60,27 @@ const actions = {
     commit('SET_MMR', data)
   },
   deleteResult ({ commit, state }, id) {
-    commit('DELETE_RESULT', id)
-    // reset mmr to last added result
-    commit('SET_MMR', [...state.results].pop().mmr)
+    // eslint-disable-next-line no-unused-vars
+    return new Promise(async (resolve, reject) => {
+      commit('DELETE_RESULT', id)
+      // reset mmr to last added result
+      commit('SET_MMR', [...state.results].pop().mmr)
+    })
   },
   updateResult ({ commit }, data) {
-    commit('UPDATE_RESULT', data)
+    // eslint-disable-next-line no-unused-vars
+    return new Promise(async (resolve, reject) => {
+      commit('UPDATE_RESULT', data)
+    })
   },
-  setBackupResults ({ commit }, data) {
+  setBackupResults ({ commit }) {
+    // eslint-disable-next-line no-unused-vars
     return new Promise(async (resolve, reject) => {
       commit('SET_BACKUP_RESULTS')
     })
   },
   setImportedResults ({ commit, state }, data) {
+    // eslint-disable-next-line no-unused-vars
     return new Promise(async (resolve, reject) => {
       const payload = decodeDiaryData(data)
       if (state.results.length > 0) {
