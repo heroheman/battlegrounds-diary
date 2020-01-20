@@ -62,6 +62,10 @@
         <b-row class="mb-4">
           <b-col sm="12" md="4" class="mb-4">
             <b-form-input required v-model="result.mmr" type="number" placeholder="New Rating" />
+            <b-form-text class="inline-point-diff" v-if="result.mmr">
+              <span v-if="pointDifference > 0" class="text-success">+{{ pointDifference }}</span>
+              <span v-else class="text-danger">{{ pointDifference }}</span>
+            </b-form-text>
           </b-col>
 
           <b-col sm="12" md="4" class="mb-4">
@@ -138,6 +142,9 @@ export default {
     ...mapState('history', [
       'heroes', 'tribes', 'summary', 'mmr', 'results'
     ]),
+    pointDifference () {
+      return this.result.mmr - this.mmr
+    },
     heroOptions () {
       let heroes = []
       let active = this.heroes.filter(h => h.active === true).map( hero => {
@@ -233,6 +240,12 @@ export default {
 <style>
 .text-cursive {
   font-weight: italic;
+}
+
+.inline-point-diff {
+  position: absolute;
+  right: 50px;
+  top: 6px;
 }
 
 /* Enter and leave animations can use different */
