@@ -27,7 +27,15 @@ const mutations = {
     const index = state.results.findIndex(result => result.id == id)
     state.results.splice(index, 1)
   },
-  UPDATE_RESULT: () => {
+  UPDATE_RESULT: (state, payload) => {
+    let item = state.results.find(res => res.id === payload.id)
+    item.difference = payload.difference
+    item.hero = payload.hero
+    item.mmr = payload.mmr
+    item.note = payload.note
+    item.placement = payload.placement
+    item.summary = payload.summary
+    item.tribe = payload.tribe
   },
   SET_IMPORTED_RESULTS: (state, payload) => {
     state.results = []
@@ -67,10 +75,11 @@ const actions = {
       commit('SET_MMR', [...state.results].pop().mmr)
     })
   },
-  updateResult ({ commit }, data) {
+  updateResult ({ commit, state }, data) {
     // eslint-disable-next-line no-unused-vars
     return new Promise(async (resolve, reject) => {
       commit('UPDATE_RESULT', data)
+      commit('SET_MMR', parseInt([...state.results].pop().mmr))
     })
   },
   setBackupResults ({ commit }) {
@@ -95,6 +104,7 @@ const actions = {
 
 const getters = {
   resultsJSON: state => encodeDiaryData(state.results),
+  resultById: state => resultId => state.results.find( res => res.id === resultId ),
   resultsTableData: state => {
     return state.results.map((res, index, arr) => {
       return {

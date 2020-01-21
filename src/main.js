@@ -21,14 +21,14 @@ import {
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,
   uniArrowGrowth, uniChartDown, uniCog, uniChartPieAlt, uniNinja,
   uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes, uniBookOpen,
-  uniCalculator, uniQuestionCircle, uniDiary, uniPlus, uniEllipsisV
+  uniCalculator, uniQuestionCircle, uniDiary, uniPlus, uniEllipsisV, uniPen
 } from 'vue-unicons/src/icons'
 
 Unicon.add([
   uniTrash, uniCommentLines, uniSorting, uniInfoCircle,
   uniArrowGrowth, uniChartDown, uniCog, uniChartPieAlt, uniNinja,
   uniChartBar, uniImageDownload, uniCircle, uniListUl, uniTimes, uniBookOpen,
-  uniCalculator, uniQuestionCircle, uniDiary, uniPlus, uniEllipsisV
+  uniCalculator, uniQuestionCircle, uniDiary, uniPlus, uniEllipsisV, uniPen
 ])
 
 Vue.use(Unicon)

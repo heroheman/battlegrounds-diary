@@ -95,6 +95,7 @@
           <b-dropdown variant="link" no-caret>
             <template v-slot:button-content>
               <unicon v-if="row.item.note" name="comment-lines" fill="black" width="15" height="15" />
+              <unicon name="pen" fill="black" width="15" height="15" />
               <unicon name="trash" fill="red" width="15" height="15" />
               <unicon name="ellipsis-v" fill="black" width="15" height="15" />
             </template>
@@ -102,6 +103,12 @@
               <unicon name="comment-lines" fill="white" width="15" height="15" />
               Show Comment
             </b-dropdown-item>
+
+            <b-dropdown-item v-b-modal="`edit-modal-${row.item.id}`">
+              <unicon name="pen" fill="white" width="15" height="15" />
+              Edit
+            </b-dropdown-item>
+
             <b-dropdown-item v-b-modal="`delete-modal-${row.item.id}`">
               <unicon name="trash" fill="white" width="15" height="15" />
               Delete
@@ -116,6 +123,28 @@
             title="Delete Entry?"
             @ok="handleDelete(row.item.id)">
             <p class="my-4">Are you sure?</p>
+          </b-modal>
+
+          <b-modal :id="`edit-modal-${row.item.id}`"
+            header-bg-variant="warning"
+            header-text-variant="light"
+            ok-variant="success"
+            ok-title="Edit"
+            title="Edit Entry?"
+            >
+            <FormResultEdit @editData="resultEdited = $event" :resultId="row.item.id" />
+            <!-- <template v-slot:modal-ok @click="handleUpdate"> -->
+            <!--   SEND -->
+            <!-- </template> -->
+            <template v-slot:modal-footer="{ ok, cancel }">
+              <!-- Emulate built in modal footer ok and cancel button actions -->
+              <b-button size="sm" variant="danger" @click="handleUpdate(row.item.id)">
+                Update Data
+              </b-button>
+              <b-button size="sm" variant="primary" @click="cancel()">
+                Cancel
+              </b-button>
+            </template>
           </b-modal>
         </div>
 
@@ -136,8 +165,10 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import FormResultEdit from '@/components/FormResultEdit'
 export default {
   name: "TableResults",
+  components: { FormResultEdit },
   data: () => ({
     filter: '',
     totalRows: '1',
@@ -145,6 +176,7 @@ export default {
     currentPage: 1,
     sortDesc: true,
     sortBy: 'timestamp',
+    resultEdited: null,
     fields: [
       { key: 'hero', label: 'Hero' },
       { key: 'placement', label: 'Pos' },
@@ -167,10 +199,16 @@ export default {
   },
   methods: {
     ...mapActions('history', [
-      'deleteResult'
+      'deleteResult',
+      'updateResult'
     ]),
     handleDelete(id) {
       this.deleteResult(id)
+    },
+    handleUpdate(modalId) {
+      console.log("value: ");
+      this.updateResult(this.resultEdited)
+      this.$bvModal.hide(`edit-modal-${modalId}`)
     },
     getGainLoseIndicator (place, diff) {
       const average = this.averageGainLose.find(a => a.place === parseInt(place)).average
@@ -194,6 +232,7 @@ export default {
 <style>
 .b-table tbody td {
   white-space: nowrap !important;
+  vertical-align: middle !important;
 }
 
 colgroup .hero {min-width: 200px;}
@@ -204,9 +243,9 @@ colgroup .summary { width: 100px; }
 colgroup .timestamp { width: 150px; }
 colgroup .actions { width: 100px; }
 
-table td
-table th {
-  vertical-align: middle;
+.table td
+.table th {
+  vertical-align: middle !important;
 }
 
 .button--delete {
