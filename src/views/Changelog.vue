@@ -3,6 +3,15 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-21:</strong>
+        <ul>
+          <li><strong>Add edit function to results</strong></li>
+          <li>Shorter Summary names (thinking about dropping them entirely)</li>
+          <li>Change Table Action Buttons to Dropdown</li>
+          <li>Fix a bug where mmr is not updating when last result is added</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-14:</strong>
         <ul>
           <li>Fixed Header and Icons</li>
