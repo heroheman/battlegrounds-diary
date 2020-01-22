@@ -141,12 +141,12 @@
     },
     {
         "id": 28,
-        "active": false,
+        "active": true,
         "name": "Professor Putricide"
     },
     {
         "id": 29,
-        "active": false,
+        "active": true,
         "name": "Trade Prince Gallywix"
     },
     {
@@ -158,6 +158,16 @@
         "id": 31,
         "active": false,
         "name": "Giantfin"
+    },
+    {
+        "id": 32,
+        "active": true,
+        "name": "Tyrion Fordring"
+    },
+    {
+        "id": 33,
+        "active": true,
+        "name": "Millhouse Manastorm"
     }
 ]
 

@@ -3,6 +3,18 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-01-22:</strong>
+        <ul>
+          <li>
+            <a href="https://www.reddit.com/r/BobsTavern/comments/eryj5x/galakronds_awakening_162_patch_notes_january_21/ff6o041/" target="_blank">
+              New Patch Release:
+            </a>
+          </li>
+          <li>Added new heroes: Tyrion Fordring, Millhouse Manastorm</li>
+          <li>ReAdded heroes: Prof. Putricide, Gallywix</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-21:</strong>
         <ul>
           <li><strong>Add edit function to results</strong></li>
