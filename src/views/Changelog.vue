@@ -3,11 +3,30 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-02-26:</strong>
+        <ul>
+          <li>Removed hero: Tyrion Fordring (RIP)</li>
+          <li>ReAdded hero: Queen Wagtoggle</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2020-02-26:</strong>
+        <ul>
+          <li>
+            <a href="https://www.reddit.com/r/BobsTavern/comments/f9xerm/dragons_enter_battlegrounds_164_patch_notes/" target="_blank">
+              Dragon Patch Release:
+            </a>
+          </li>
+          <li>Added new heroes: Galakrond, Deathwing, Ysera, Nozdormu, Malygos, Alexstrasza, Reno Jackson</li>
+          <li>Removed heroes: Prof. Putricide, Queen Wagtoggle</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-01-22:</strong>
         <ul>
           <li>
             <a href="https://www.reddit.com/r/BobsTavern/comments/eryj5x/galakronds_awakening_162_patch_notes_january_21/ff6o041/" target="_blank">
-              New Patch Release:
+              Tyrion Patch Release:
             </a>
           </li>
           <li>Added new heroes: Tyrion Fordring, Millhouse Manastorm</li>
