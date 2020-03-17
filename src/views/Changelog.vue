@@ -3,6 +3,21 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-03-17:</strong>
+        <ul>
+          <li>
+            <a href="https://www.reddit.com/r/BobsTavern/comments/fk970f/166_update_new_murloc_hero_nerfs_and_buffs/" target="_blank">
+              Patch Notes
+            </a>
+          </li>
+          <li>Removed hero: Ragnaros, Sylvanas, Patches</li>
+          <li>ReAdded hero: Sir Finley Mrrgglton (rework), Prof Putricide</li>
+          <li>New Hero: Fungalmaster Flurgle</li>
+          <li>Illidan Stormrage (will be added on 26/3</li>
+          <li>Also <a href="https://staythefuckhome.com/" target="_blank">STAY THE FUCK AT HOME</a>. We can do it.</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-02-26:</strong>
         <ul>
           <li>Removed hero: Tyrion Fordring (RIP)</li>

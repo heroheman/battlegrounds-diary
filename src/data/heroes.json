@@ -81,7 +81,7 @@
   },
   {
     "id": 16,
-    "active": true,
+    "active": false,
     "name": "Ragnaros the Firelord"
   },
   {
@@ -106,7 +106,7 @@
   },
   {
     "id": 21,
-    "active": true,
+    "active": false,
     "name": "Sylvanas Windrunner"
   },
   {
@@ -126,7 +126,7 @@
   },
   {
     "id": 25,
-    "active": true,
+    "active": false,
     "name": "Patches the Pirate"
   },
   {
@@ -141,7 +141,7 @@
   },
   {
     "id": 28,
-    "active": false,
+    "active": true,
     "name": "Professor Putricide"
   },
   {
@@ -203,5 +203,15 @@
     "id": 40,
     "active": true,
     "name": "Reno Jackson"
+  },
+  {
+    "id": 41,
+    "active": true,
+    "name": "Fungalmaster Flurgle"
+  },
+  {
+    "id": 42,
+    "active": true,
+    "name": "Illidan Stormrage"
   }
 ]
