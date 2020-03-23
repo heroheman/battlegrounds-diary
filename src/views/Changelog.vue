@@ -18,7 +18,7 @@
         </ul>
       </li>
       <li>
-        <strong>2020-02-26:</strong>
+        <strong>2020-03-03:</strong>
         <ul>
           <li>Removed hero: Tyrion Fordring (RIP)</li>
           <li>ReAdded hero: Queen Wagtoggle</li>
