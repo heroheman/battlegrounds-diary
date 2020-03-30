@@ -17,6 +17,7 @@
                 :sort-desc.sync="heroes.all.sortDesc"
                 :items="leaderboardHeroes">
               </b-table>
+
             </b-card>
           </b-tab>
           <b-tab title="Heroes Top 1 / Top 4">

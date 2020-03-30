@@ -3,6 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-03-30:</strong>
+        <ul>
+          <li>Add Divine Shield as Tribe</li>
+          <li>Fix Problem with Point Sorting in leaderboard</li>
+          <li>These points are feedback from the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeR_3K8ktIyDz_EwJcuUvB6VjqS6DbCy8qiKh2fDMmIVx_mkw/viewform" target="_blank">Survey</a>. I never noticed the leaderboard bug - so thanks to the report! Please send me an <a mailto="moin@flore.nz">E-Mail</a> if you encounter more bugs like this. Or even better - create an issue on <a href="https://github.com/heroheman/battlegrounds-diary/issues"> Github</a>!</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-03-17:</strong>
         <ul>
           <li>
