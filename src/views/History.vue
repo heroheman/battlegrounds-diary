@@ -1,11 +1,5 @@
 <template>
   <div>
-    <b-alert show variant="info" dismissible>
-      <small>Hi - I am currently working on the next version of the diary. Therefore I would like to know more about you - the user. Maybe you have a few minutes to fill out a survey? Thanks!</small>
-      <hr>
-      <a href=""></a>
-      <b-button size="sm" variant="primary" href="https://forms.gle/VXM4UWH1whrMsUvn8" target="_blank">Take me to the survey!</b-button>
-    </b-alert>
     <b-modal
       id="modal-initial-mmr" title="Enter your initial MMR"
       @ok="handleMmrUpdate()"
