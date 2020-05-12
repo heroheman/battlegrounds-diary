@@ -213,5 +213,20 @@
     "id": 42,
     "active": true,
     "name": "Illidan Stormrage"
+  },
+  {
+    "id": 43,
+    "active": true,
+    "name": "Lady Vashj"
+  },
+  {
+    "id": 44,
+    "active": true,
+    "name": "Maiev Shadowsong"
+  },
+  {
+    "id": 45,
+    "active": true,
+    "name": "Kael'thas Sunstrider"
   }
 ]

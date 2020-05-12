@@ -3,6 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-05-12:</strong>
+        <ul>
+          <li>New Patch - <a href="https://playhearthstone.com/en-us/news/23418923/hearthstone-updates-12-mai-patch-17-2">Link</a></li>
+          <li>Add Lady Vashj, Maiev Shadowsong, Kael'thas Sunstrider</li>
+          <li>Sidenote: Working right now on a database integration to move things out of localStorage and allow cross-device access.</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-03-30:</strong>
         <ul>
           <li>Add Divine Shield as Tribe</li>
