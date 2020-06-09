@@ -3,6 +3,15 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-06-09:</strong>
+        <ul>
+          <li>New Patch - 17.4<a href="https://playhearthstone.com/en-gb/news/23440114">Link</a></li>
+          <li>Add Pirate Tribe</li>
+          <li>Add new Pirate Heroes: Eudora, Kragg, Hooktusk</li>
+          <li>Retired Putricide (Can we just permanently remove him? Or is he coming back next month again?)</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-05-12:</strong>
         <ul>
           <li>New Patch - <a href="https://playhearthstone.com/en-us/news/23418923/hearthstone-updates-12-mai-patch-17-2">Link</a></li>

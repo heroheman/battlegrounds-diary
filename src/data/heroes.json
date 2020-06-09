@@ -126,7 +126,7 @@
   },
   {
     "id": 25,
-    "active": false,
+    "active": true,
     "name": "Patches the Pirate"
   },
   {
@@ -141,7 +141,7 @@
   },
   {
     "id": 28,
-    "active": true,
+    "active": false,
     "name": "Professor Putricide"
   },
   {
@@ -228,5 +228,20 @@
     "id": 45,
     "active": true,
     "name": "Kael'thas Sunstrider"
+  },
+  {
+    "id": 46,
+    "active": true,
+    "name": "Captain Eudora"
+  },
+  {
+    "id": 47,
+    "active": true,
+    "name": "Skycap'n Kragg"
+  },
+  {
+    "id": 48,
+    "active": true,
+    "name": "Captain Hooktusk"
   }
 ]

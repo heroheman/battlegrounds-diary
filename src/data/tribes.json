@@ -30,6 +30,11 @@
     "desc": "Draaagons"
   },
   {
+    "id": 9,
+    "name": "Pirates",
+    "desc": "Double Tap"
+  },
+  {
     "id": 6,
     "name": "Deathrattle",
     "desc": "Bombs, Eggs, Baron Rivendare. What is dead may never die."
