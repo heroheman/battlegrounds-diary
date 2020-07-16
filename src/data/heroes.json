@@ -151,7 +151,7 @@
   },
   {
     "id": 30,
-    "active": false,
+    "active": true,
     "name": "King Mukla"
   },
   {
@@ -247,6 +247,16 @@
   {
     "id": 49,
     "active": true,
-    "name": "Aranna, Unleashed"
+    "name": "Aranna Starseeker"
+  },
+  {
+    "id": 50,
+    "active": true,
+    "name": "Tess Greymane"
+  },
+  {
+    "id": 51,
+    "active": true,
+    "name": "Dinotamer Brann"
   }
 ]
