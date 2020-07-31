@@ -3,6 +3,25 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-08-3:</strong>
+        <ul>
+          <li>Add Mr Bigglesworth</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2020-07-16:</strong>
+        <ul>
+          <li>Add King Mukla, Tess Greymane, Dinotamer Brann</li>
+          <li>I realized very late that Dinotamer Brann is the same hero as Brann Bronzebeard, so this is now a separate hero entry. A change to the old one will essentially mess with peoples stats, so I will keep him as separate entry. Sorry for that.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2020-06-17:</strong>
+        <ul>
+          <li>Add Aranna</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-06-09:</strong>
         <ul>
           <li>New Patch - 17.4<a href="https://playhearthstone.com/en-gb/news/23440114">Link</a></li>

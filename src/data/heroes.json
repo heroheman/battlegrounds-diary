@@ -258,5 +258,10 @@
     "id": 51,
     "active": true,
     "name": "Dinotamer Brann"
+  },
+  {
+    "id": 52,
+    "active": true,
+    "name": "Mr Bigglesworth"
   }
 ]
