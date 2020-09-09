@@ -3,7 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
-        <strong>2020-08-3:</strong>
+        <strong>2020-09-09:</strong>
+        <ul>
+          <li><a href="https://news.blizzard.com/en-us/hearthstone/23509390/18-2-patch-notes" target="_blank">Patchnotes 18.02</a></li>
+          <li>Add Lord Barov, Jandice Barov, Forest Warden Omu</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2020-08-03:</strong>
         <ul>
           <li>Add Mr Bigglesworth</li>
         </ul>
