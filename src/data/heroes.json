@@ -81,7 +81,7 @@
   },
   {
     "id": 16,
-    "active": false,
+    "active": true,
     "name": "Ragnaros the Firelord"
   },
   {
@@ -278,5 +278,20 @@
     "id": 55,
     "active": true,
     "name": "Forest Warden Omu"
+  },
+  {
+    "id": 56,
+    "active": true,
+    "name": "Chenvaala"
+  },
+{
+    "id": 57,
+    "active": true,
+    "name": "Rakanishu"
+  },
+  {
+    "id": 58,
+    "active": true,
+    "name": "Al'Akir the Windlord"
   }
 ]
