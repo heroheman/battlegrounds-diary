@@ -3,6 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2020-09-29:</strong>
+        <ul>
+          <li><a href="https://playhearthstone.com/en-us/news/23523062" target="_blank">Patchnotes 18.04</a></li>
+          <li>Added new heroes</li>
+          <li>Also - this will introduce the MMR reset. As this came as a surprise by me I had no time to integrate some kind of "reset" or season mechanic. As a workaround just set a dummy game with the 0 point result. You can also delete your localStorage of your browser (but make a backup before that). Sorry for the inconvenience.</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-09-09:</strong>
         <ul>
           <li><a href="https://news.blizzard.com/en-us/hearthstone/23509390/18-2-patch-notes" target="_blank">Patchnotes 18.02</a></li>
