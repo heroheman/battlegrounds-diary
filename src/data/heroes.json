@@ -293,5 +293,10 @@
     "id": 58,
     "active": true,
     "name": "Al'Akir the Windlord"
+  },
+  {
+    "id": 59,
+    "active": true,
+    "name": "Zephrys, the Great"
   }
 ]
