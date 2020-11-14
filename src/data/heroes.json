@@ -298,5 +298,10 @@
     "id": 59,
     "active": true,
     "name": "Zephrys, the Great"
+  },
+  {
+    "id": 60,
+    "active": true,
+    "name": "Silas Darkmoon"
   }
 ]
