@@ -302,6 +302,16 @@
   {
     "id": 60,
     "active": true,
-    "name": "Silas Darkmoon"
-  }
+    "name": "N'Zoth"
+  },
+  {
+    "id": 61,
+    "active": true,
+    "name": "C'thun"
+  },
+  {
+    "id": 62,
+    "active": true,
+    "name": "Y'Shaarj"
+  },
 ]
