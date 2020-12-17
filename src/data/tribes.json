@@ -49,6 +49,11 @@
     "name": "Divine Shield",
     "desc": "Double Tap"
   },
+{
+    "id": 11,
+    "name": "Taunt",
+    "desc": "Tauntings are daunting"
+  },
   {
     "id": 5,
     "name": "Neutral / Other",
