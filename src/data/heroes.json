@@ -313,5 +313,10 @@
     "id": 62,
     "active": true,
     "name": "Y'Shaarj"
+  },
+  {
+    "id": 63,
+    "active": true,
+    "name": "Silas Darkmoon"
   }
 ]
