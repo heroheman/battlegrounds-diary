@@ -318,5 +318,15 @@
     "id": 63,
     "active": true,
     "name": "Silas Darkmoon"
+  },
+  {
+    "id": 64,
+    "active": true,
+    "name": "Tickatus"
+  },
+  {
+    "id": 65,
+    "active": true,
+    "name": "Greybough"
   }
 ]
