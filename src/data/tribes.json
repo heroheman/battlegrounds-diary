@@ -40,6 +40,11 @@
     "desc": "Earth Wind Fire Disco"
   },
   {
+    "id": 12,
+    "name": "Quilboar",
+    "desc": "Boar, ey"
+  },
+  {
     "id": 6,
     "name": "Deathrattle",
     "desc": "Bombs, Eggs, Baron Rivendare. What is dead may never die."
