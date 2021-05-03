@@ -3,6 +3,16 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2021-05-03:</strong>
+        <ul>
+          <li><a href="https://playhearthstone.com/en-us/news/23665634/20-2-patch-notes" target="_blank">Patchnotes 20.02</a></li>
+          <li>Quilboar Update!</li>
+          <li>Added new Tribe and three new heroes</li>
+          <li>Added Saurfang as hero, sorry for the delay</li>
+          <li>sorry for missing updates, been busy the last months</li>
+        </ul>
+      </li>
+      <li>
         <strong>2020-09-29:</strong>
         <ul>
           <li><a href="https://playhearthstone.com/en-us/news/23523062" target="_blank">Patchnotes 18.04</a></li>
