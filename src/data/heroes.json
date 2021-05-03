@@ -333,5 +333,20 @@
     "id": 66,
     "active": true,
     "name": "Overlord Saurfang"
+  },
+  {
+    "id": 67,
+    "active": true,
+    "name": "Death Speaker Blackthorn"
+  },
+  {
+    "id": 68,
+    "active": true,
+    "name": "Vol’jin"
+  },
+  {
+    "id": 69,
+    "active": true,
+    "name": "Xyrella"
   }
 ]
