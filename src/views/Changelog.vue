@@ -3,6 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
+        <strong>2021-07-02:</strong>
+        <ul>
+          <li><a href="https://playhearthstone.com/en-us/news/23686109/20-8-patch-notes" target="_blank">Patchnotes 20.8</a></li>
+          <li>Added three new heroes. Two of them are not so new.</li>
+          <li>Again, sorry for the delayed hero update, I don't play that often anymore. If anyone wants to be part of this project, contact me. In short term I need someone who can update hero data in my json files. In long term I want to rewrite this project. Contact me via reddit: u/heroheman</li>
+        </ul>
+      </li>
+      <li>
         <strong>2021-05-03:</strong>
         <ul>
           <li><a href="https://playhearthstone.com/en-us/news/23665634/20-2-patch-notes" target="_blank">Patchnotes 20.02</a></li>
