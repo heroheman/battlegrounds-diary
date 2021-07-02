@@ -348,5 +348,21 @@
     "id": 69,
     "active": true,
     "name": "Xyrella"
+  },
+  {
+    "id": 70,
+    "active": true,
+    "name": "Mutanus the Devourer"
+  },
+  {
+    "id": 71,
+    "active": true,
+    "name": "Guff Runetotem"
+  },
+  {
+    "id": 72,
+    "active": true,
+    "name": "Kurtrus Ashfallen"
   }
+  
 ]
