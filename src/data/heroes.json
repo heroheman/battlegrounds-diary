@@ -379,7 +379,7 @@
     "active": true,
     "name": "Cariel Roame"
   },
-    {
+  {
     "id": 76,
     "active": true,
     "name": "Tamsin Roame"
@@ -398,5 +398,10 @@
     "id": 79,
     "active": true,
     "name": "Cookie the Cook"
+  },
+  {
+    "id": 80,
+    "active": true,
+    "name": "Scabbs Cutterbutter"
   }
 ]
