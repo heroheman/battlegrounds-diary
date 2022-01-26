@@ -403,5 +403,25 @@
     "id": 80,
     "active": true,
     "name": "Scabbs Cutterbutter"
-  }
+  },
+  {
+    "id": 81,
+    "active": true,
+    "name": "Bru’kan"
+  },
+  {
+    "id": 82,
+    "active": true,
+    "name": "Drek’Thar"
+  },
+  {
+    "id": 83,
+    "active": true,
+    "name": "Vanndar Stormpike"
+  },
+  {
+    "id": 84,
+    "active": true,
+    "name": "Tavish Stormpike"
+  },
 ]

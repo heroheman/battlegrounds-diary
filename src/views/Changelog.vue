@@ -2,7 +2,14 @@
   <div class="changelog">
     <h3>Changelog</h3>
     <ul>
-    <li>
+      <li>
+        <strong>2022-02-26:</strong>
+        <ul>
+          <li><a href="https://playhearthstone.com/en-us/news/23765270/22-2-patch-notes" target="_blank">Patchnotes 22.2</a></li>
+          <li>Added four new heroes</li>
+        </ul>
+      </li>
+      <li>
         <strong>2021-09-02:</strong>
         <ul>
           <li><a href="https://playhearthstone.com/en-us/news/23712592/21-2-patch-notes" target="_blank">Patchnotes 21.2</a></li>
