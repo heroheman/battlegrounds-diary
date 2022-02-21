@@ -3,7 +3,14 @@
     <h3>Changelog</h3>
     <ul>
       <li>
-        <strong>2022-02-26:</strong>
+        <strong>2022-01-21:</strong>
+        <ul>
+          <li><a href="https://playhearthstone.com/en-gb/news/23761712/22-4-patch-notes" target="_blank">Patchnotes 22.4</a></li>
+          <li>Added three new heroes</li>
+        </ul>
+      </li>
+      <li>
+        <strong>2022-01-26:</strong>
         <ul>
           <li><a href="https://playhearthstone.com/en-us/news/23765270/22-2-patch-notes" target="_blank">Patchnotes 22.2</a></li>
           <li>Added four new heroes</li>

@@ -423,5 +423,20 @@
     "id": 84,
     "active": true,
     "name": "Tavish Stormpike"
+  },
+  {
+    "id": 85,
+    "active": true,
+    "name": "Varden Dawngraspo"
+  },
+  {
+    "id": 86,
+    "active": true,
+    "name": "Rokara"
+  },
+  {
+    "id": 87,
+    "active": true,
+    "name": "Onyxia"
   }
 ]
